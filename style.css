@@ -71,6 +71,10 @@ header, footer {
     text-decoration: none;
 }
 
+.section-refs li a:hover {
+    color:rgb(189, 189, 189)
+}
+
 .game-logo {
     width: 320px;
     height: 180px;    
@@ -86,7 +90,7 @@ header, footer {
 }
 
 .game-description-start {
-    
+    margin-top: 0;
 }
 
 .platforms-logo {
@@ -109,20 +113,78 @@ header, footer {
     margin-left: 20px;
 }
 
+.buy-section {
+    margin-top: 50px;
+}
+
 .buy-button {
-    display: block;
-    justify-content: center;
-    align-items: center;
-    padding: 16px 32px;
-    gap: 8px;
+    padding: 12px 32px;
+    width: fit-content;
+    background-color: rgb(27, 40, 56);
+    border-radius: 30px;
+    box-shadow: 0px 5px 15px 5px black;
+    transition: 0.5s;
+}
+
+.buy-button:hover {
+    transform: scale(1.15);
+    transition: 0.5s;
+}
+
+.buy-button img {
+    position: relative;
+    float: left;
+    width: 70px;
+    height: 70px;
+    right: 10px;
+}
+
+.buy-button p {
+    position: relative;
+    float: right;
+    font-size: 40px;
+    font-weight: 100;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+    color: white;
+    margin: 5% auto;
 }
 
 .start-section {
     text-align: center;
+    margin-bottom: 150px;
+}
+
+.game-description h2 {
+    margin-bottom: 30px;
+}
+
+.game-description .main-description {
+    margin-bottom: 50px;
+}
+
+.game-description-subsections {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    margin-bottom: 100px;
 }
 
 .game-description-subsections li{
     display: inline;
+    background-color: rgb(199, 199, 199);
+    margin: 20px;
+    padding: 20px;
+    border-radius: 20px;
+    box-shadow: 0px 5px 15px 5px #000;
+}
+
+.game-description-subsections li a {
+    text-decoration: none;
+    color: black;
+}
+
+.game-description-subsections .ref-1:active > .subsection-description.subsection-1{
+
 }
 
 .subsection-description {
@@ -130,15 +192,18 @@ header, footer {
 }
 
 .subsection-description aside {
-    display: flex;
-    flex-direction: column;
+    display: grid;
+    grid-template-rows: repeat(2, 50%);
     align-items: center;
     width: 50%;
+    row-gap: 20px;
 }
 
 .subsection-description section {
-    width: 50%;
+    position: relative;
     float: right;
+    width: 50%;
+    right: 5%;
 }
 
 .subsection-description.subsection-2, .subsection-description.subsection-3 {
@@ -161,13 +226,15 @@ header, footer {
     width: 50%;
 }
 
-.video-demo h2 {
-    margin-bottom: 0px;
+.video-demo {
+    margin-bottom: 50px;
 }
 
 .video-player {
     width: 1280px;
     height: 720px;
+    box-shadow: 0px 5px 15px 5px black;
+    margin-top: -30px;
 }
 
 .header-gallery {
@@ -180,6 +247,7 @@ header, footer {
 
 .gallery-photo {
     border-radius: 25px;
+    box-shadow: 0px 5px 15px 5px #000;
 }
 
 .main-photo {
@@ -193,11 +261,23 @@ header, footer {
     height: 236px;
 }
 
+.gallery-buttons {
+    vertical-align: middle;
+}
+
+.gallery-button.previous-image {
+    float: left;
+}
+
+.gallery-button.next-image {
+    float: right;
+}
+
 .gallery-carousel {
     display: grid;
     justify-content: center;
     grid-template-columns: repeat(4, minmax(420px, 420px));
-    grid-column-gap: 20px;
+    grid-column-gap: 30px;
 }
 
 .stats {
@@ -273,6 +353,10 @@ header, footer {
     margin-top: -30px;
 }
 
+.contacts {
+    margin-bottom: 100px;
+}
+
 .contacts h2 {
     margin-bottom: 0px;
 }
@@ -299,11 +383,6 @@ header, footer {
 }
 
 .social-button:hover {
-    transform: scale(1.15);
-    transition: 0.5s;
-}
-
-.social-button {
     transform: scale(1.15);
     transition: 0.5s;
 }
