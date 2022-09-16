@@ -1,5 +1,9 @@
 body {
-    background: #5c95ff;
+    background: #ffffff;
+    font-family: "Arial";
+    font-style: normal;
+    font-size: 30px;
+    letter-spacing: 0.02em;
 }
 
 img {
@@ -8,10 +12,12 @@ img {
 }
 
 h1 {
-    font-family: "Open Sans";
-    font-style: normal;
-    
-    font-size: 90px;   
+    font-size: 170px;
+    margin-bottom: 0px;   
+}
+
+h2 {
+    font-size: 90px;
 }
 
 h1, h2 {
@@ -29,54 +35,82 @@ ul {
 }
 
 header, footer {
-    background: #D9D9D9;
-    height: 150px;
+    background: #4a4a4a;
+    height: 240px;
+}
+
+.navigation {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    text-align: center;   
+}
+
+.navigation.top-nav {
+    padding-top: 70px;
+} 
+
+.navigation.bottom-nav {
+    padding-top: 70px;
 }
 
 .section-refs {
-    text-align: center;
+   margin: auto;
 }
 
 .section-refs li {
     display: inline;
+    margin: 25px;
+    padding-bottom: -50px;
+    font-size: 35px;
+}
+
+.section-refs li a {
+    color: white;
+    font-weight: 700;
+    text-decoration: none;
 }
 
 .game-logo {
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    align-items: center;
-    padding: 8px;
-    gap: 8px;
-    width: 160px;
-    height: 90px;    
+    width: 320px;
+    height: 180px;    
 }
 
 .top-game-logo {
-    position: relative;
-    left: 160px;
-    top: 40px;
+    float: left;
 }
 
 .bottom-game-logo {
     position: relative;
-    
     float: right;
 }
 
-.ps5-logo {
-    width: 140px;
-    height: 30px;
+.game-description-start {
     
+}
+
+.platforms-logo {
+    border-top: 2px solid rgba(0, 0, 0, 1);
+    display: inline;
+    padding-top: 50px;
+}
+
+.ps5-logo, .win10-logo {  
+    width: 280px;
+    height: 60px;
+    margin: 5px;   
+}
+
+.ps5-logo {
+    margin-right: 20px;
 }
 
 .win10-logo {
-    width: 140px;
-    height: 69px;
-    
+    margin-left: 20px;
 }
 
 .buy-button {
+    display: block;
     justify-content: center;
     align-items: center;
     padding: 16px 32px;
@@ -87,20 +121,9 @@ header, footer {
     text-align: center;
 }
 
-.video-demo {
-    text-align: center;
-}
-
-.video-player {
-    min-width: 130vw;
-    object-fit: contain;
-}
-
 .game-description-subsections li{
     display: inline;
 }
-
-
 
 .subsection-description {
     display: table;
@@ -120,4 +143,199 @@ header, footer {
 
 .subsection-description.subsection-2, .subsection-description.subsection-3 {
     display: none;
+}
+
+.story {
+    display: table;
+}
+
+.story section {
+    float: left;
+    width: 50%;
+}
+
+.story aside {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 50%;
+}
+
+.video-demo h2 {
+    margin-bottom: 0px;
+}
+
+.video-player {
+    width: 1280px;
+    height: 720px;
+}
+
+.header-gallery {
+    margin-bottom: 30px;
+}
+
+.gallery {
+    background-color: orange;
+}
+
+.gallery-photo {
+    border-radius: 25px;
+}
+
+.main-photo {
+    width: 1280px;
+    height: 720px;
+    margin-bottom: 50px;
+}
+
+.additional-photo {
+    width: 420px;
+    height: 236px;
+}
+
+.gallery-carousel {
+    display: grid;
+    justify-content: center;
+    grid-template-columns: repeat(4, minmax(420px, 420px));
+    grid-column-gap: 20px;
+}
+
+.stats {
+    background-color: aqua;
+}
+
+.stats-details {
+    display: grid;
+    grid-template-rows: repeat(2, 1fr);
+}
+
+.stats-details-chapter-1 {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    margin-bottom: 20px;
+}
+
+.stats-details-chapter-2 {
+    display: grid;
+    grid-template-columns: repeat(2, 2fr);
+}
+
+.stats-image {
+    width: 200px;
+    height: 200px;
+}
+
+.stats-text {
+    font-weight: 700;
+}
+
+.stats-value {
+    font-size: 40px;
+    margin-top: 15px;
+    margin-bottom: 0px;
+}
+
+.stats-description {
+    font-size: 25px;
+    margin-top: 10px;
+}
+
+.team {
+    background-color: aquamarine;
+}
+
+.team-table {
+    display: grid;
+    text-align: center;
+    grid-template-rows: repeat(2, 1fr);
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-row-gap: 100px;
+    
+}
+
+.participant-photo {
+    width: 300px;
+    height: 300px;
+    border-radius: 170px;
+    box-shadow: 0px 10px 10px 5px #000;
+}
+
+.participant-name, .participant-position {
+    font-weight: 700;
+}
+
+.participant-name {
+    font-size: 40px;
+}
+
+.participant-position {
+    font-size: 25px;
+    margin-top: -30px;
+}
+
+.contacts h2 {
+    margin-bottom: 0px;
+}
+
+.contacts-description {
+    margin-bottom: 60px;
+}
+
+.contacts-buttons {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(350px, 350px));
+    justify-content: center;
+}
+
+.social-button {
+    width: 300px;
+    height: 100px;
+    text-align: center;
+    font-size: 20px;
+    border-radius: 20px;
+    border: none;
+    box-shadow: 0px 10px 15px 2px #000;
+    transition: 0.3s;
+}
+
+.social-button:hover {
+    transform: scale(1.15);
+    transition: 0.5s;
+}
+
+.social-button {
+    transform: scale(1.15);
+    transition: 0.5s;
+}
+
+.social-button.vk {
+    background-color: rgb(20, 112, 193);
+}
+
+.social-button.email {
+    background-color: rgb(172, 136, 88);
+}
+
+.social-button.telegram {
+    background-color: rgb(101, 167, 225);
+}
+
+.social-button p {
+    float: right;
+    position: relative;
+    right: 50px;
+    text-align: left;
+    color: white;
+    font-size: 25px;
+    font-weight: 700;
+    letter-spacing: 0.05em;
+}
+
+.social-logo {
+    float: left;
+    position: relative;
+    width: 70px;
+    height: 70px;
+    border-radius: 50px;
+    left: 30px;
 }
