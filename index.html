@@ -3,20 +3,27 @@
         <meta charset="UTF-8"/>
         <title>The Alchemist</title>
         <link rel="stylesheet" href="style.css">
-        <script src="script.js"></script>
     </head>
     <body>
-        <header>          
-            <nav class="navigation top-nav">
-                <img class="game-logo top-game-logo" src="why-cow.jpg">
+        <header>       
+            <img class="game-logo top-game-logo" src="why-cow.jpg">   
+            <nav class="navigation top-nav">     
                 <ul class="section-refs">
                     <li><a href="#game-description">Об игре</a></li>
                     <li><a href="#gallery">Галерея</a></li>
                     <li><a href="#stats">Статистика</a></li>
                     <li><a href="#contacts">Контакты</a></li>
                 </ul>
-            </nav>         
+            </nav>   
+            <button class="enter-button" onclick="showAuthorizationForm(); return false">Войти</button>      
         </header>
+        <div class="authorization-section" id="authorization-section" onclick="hideAuthorizationForm(); return false">
+            <form class="authorization-form" id="authorization-form">
+                <p><input type="text"></p>
+                <p><input type="text"></p>
+                <input type="submit">
+            </form>
+        </div>
         <div title="Начальный раздел" class="start-section">
             <h1>The Alchemist</h1>
             <p class="game-description-start">Исследуй подземелья и занимайся алхимией, чтобы сбежать! </p>
@@ -215,5 +222,6 @@
                 </ul>
             </nav>       
         </footer>
+        <script src="script.js"></script>
     </body>
 </html>

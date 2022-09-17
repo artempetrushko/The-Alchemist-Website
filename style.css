@@ -39,11 +39,25 @@ header, footer {
     height: 240px;
 }
 
+.authorization-section {
+    display: none;
+    position: fixed;
+    z-index: 100;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;    
+    background-color: #000;
+    opacity: 0.7;
+}
+
+.authorization-form {
+    background-color: aquamarine;
+}
+
 .navigation {
-    display: flex;
-    align-items: flex-start;
-    justify-content: space-between;
-    text-align: center;   
+    display: flex;  
+    width: fit-content;
 }
 
 .navigation.top-nav {
@@ -55,7 +69,10 @@ header, footer {
 }
 
 .section-refs {
-   margin: auto;
+   display: flex;
+   position: relative;
+   width: fit-content;
+   margin: auto 50px auto 50px;
 }
 
 .section-refs li {
@@ -73,6 +90,11 @@ header, footer {
 
 .section-refs li a:hover {
     color:rgb(189, 189, 189)
+}
+
+.enter-button {
+    display: flex;
+    float: right;
 }
 
 .game-logo {
@@ -183,10 +205,6 @@ header, footer {
     color: black;
 }
 
-.game-description-subsections .ref-1:active > .subsection-description.subsection-1{
-
-}
-
 .subsection-description {
     display: table;
 }
@@ -241,10 +259,6 @@ header, footer {
     margin-bottom: 30px;
 }
 
-.gallery {
-    background-color: orange;
-}
-
 .gallery-photo {
     border-radius: 25px;
     box-shadow: 0px 5px 15px 5px #000;
@@ -259,6 +273,10 @@ header, footer {
 .additional-photo {
     width: 420px;
     height: 236px;
+}
+
+.gallery {
+    margin-bottom: 150px;
 }
 
 .gallery-buttons {
@@ -281,12 +299,13 @@ header, footer {
 }
 
 .stats {
-    background-color: aqua;
+    margin-bottom: 150px;
 }
 
 .stats-details {
     display: grid;
     grid-template-rows: repeat(2, 1fr);
+    grid-row-gap: 30px;
 }
 
 .stats-details-chapter-1 {
@@ -297,7 +316,9 @@ header, footer {
 
 .stats-details-chapter-2 {
     display: grid;
-    grid-template-columns: repeat(2, 2fr);
+    justify-content: center;
+    grid-template-columns: repeat(2, minmax(400px, 400px));
+    grid-column-gap: 280px;
 }
 
 .stats-image {
@@ -321,7 +342,7 @@ header, footer {
 }
 
 .team {
-    background-color: aquamarine;
+    margin-bottom: 150px;
 }
 
 .team-table {
