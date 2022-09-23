@@ -2,7 +2,10 @@
     <head>
         <meta charset="UTF-8"/>
         <title>The Alchemist</title>
-        <link rel="stylesheet" href="style.css">
+        <link rel="preconnect" href="https://fonts.gstatic.com">    
+        <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P:wght@400&display=swap" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400&display=swap" rel="stylesheet">
+        <link href="style.css" rel="stylesheet">
     </head>
     <body>
         <header>       
@@ -15,14 +18,32 @@
                     <li><a href="#contacts">Контакты</a></li>
                 </ul>
             </nav>   
-            <button class="enter-button" onclick="showAuthorizationForm(); return false">Войти</button>      
+            <button class="enter-button" onclick="showAuthorizationForm(); return false">Вход</button>      
         </header>
         <div class="authorization-section" id="authorization-section" onclick="hideAuthorizationForm(); return false">
             <form class="authorization-form" id="authorization-form">
-                <p><input type="text"></p>
-                <p><input type="text"></p>
+                <a class="close-form-button" onclick="closeForms(); return false"></a>
+                <p>Авторизация</p>
+                <label for="username">E-mail или имя пользователя</label><br>
+                <p><input type="text" id="auth-username" placeholder="username"></p>
+                <label for="password">Пароль</label><br>
+                <p><input type="password" id="auth-password" placeholder="password"></p>
+                <input type="submit"><br>
+                <a class="registration-button" onclick="showRegistrationForm(); return false">Регистрация</button>              
+            </form>     
+            <form class="registration-form" id="registration-form">
+                <a class="close-form-button"></a>
+                <p>Регистрация</p>
+                <label for="username">Имя пользователя</label><br>
+                <p><input type="text" id="reg-username" placeholder="username"></p>
+                <label for="username">E-mail</label><br>
+                <p><input type="text" id="reg-email" placeholder="email@email.com"></p>
+                <label for="password">Пароль</label><br>
+                <p><input type="password" id="reg-password" placeholder="password"></p>
+                <label for="password">Повторите пароль</label><br>
+                <p><input type="password" id="reg-repeat-password" placeholder="password"></p>
                 <input type="submit">
-            </form>
+            </form>       
         </div>
         <div title="Начальный раздел" class="start-section">
             <h1>The Alchemist</h1>
@@ -195,10 +216,8 @@
         </div>
         <div title="Отзывы" class="feedbacks">
             <h2>Оставить отзыв</h2>
-            <form action="#"> 
-                <p><input type="email" value="email"></p>
-                <p><input type="text" value="name"></p>
-                <p><input type="text" value="feedback"></p>
+            <form> 
+                <p><input type="text" placeholder="feedback"></p>
                 <p><input type="submit"></p>
             </form>        
         </div>
