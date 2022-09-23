@@ -1,10 +1,12 @@
 const formState = {
-    Shown : 'block',
+    Block : 'block',
+    Flex : 'flex',
     Hidden : 'none'
 };
 
 var authorizationSection = document.getElementById("authorization-section");
-var authorizationForm = document.getElementById('authorization-form')
+var authorizationForm = document.getElementById('authorization-form');
+var registrationForm = document.getElementById('registration-form');
 var isMouseOverForm = false;
 
 authorizationForm.addEventListener('mouseenter', function(e) {
@@ -22,15 +24,32 @@ function showSubsection(subsectionNumber) {
 }
 
 function showAuthorizationForm() {
-    toggleAuthorizationForm(formState.Shown);
+    authorizationSection.style.display = formState.Flex;
+    authorizationForm.style.display = formState.Block;
+    registrationForm.style.display = formState.Hidden;
 }
 
 function hideAuthorizationForm() {
     toggleAuthorizationForm(formState.Hidden);
 }
 
+function showRegistrationForm() {
+    toggleRegistrationForm();
+}
+
 function toggleAuthorizationForm(state) {
     if (!isMouseOverForm) {
         authorizationSection.style.display = state;
     }
+}
+
+function toggleRegistrationForm() {
+    authorizationForm.style.display = formState.Hidden;
+    registrationForm.style.display = formState.Block;
+}
+
+function closeForms() {
+    authorizationForm.style.display = formState.Hidden;
+    registrationForm.style.display = formState.Hidden;
+    authorizationSection.style.display = formState.Hidden;
 }
