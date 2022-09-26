@@ -1,21 +1,18 @@
 body {
-    background: #363636;
+    background: #1D1F1D;
     font-family: "Montserrat";
     font-style: normal;
     font-size: 20px;
+    line-height: 30px;
     color: white;
     letter-spacing: 0.02em;
 }
 
-img {
-    height: 100px;
-    width: 100px;
-}
-
 h1 {
+    color: #BDE038;
     font-size: 80px;
     line-height: 80px;
-    margin-bottom: 0px;   
+    margin-bottom: 50px;   
 }
 
 h2 {
@@ -23,8 +20,7 @@ h2 {
     line-height: 40px;
 }
 
-h1, h2 {
-    color: #BDE038;
+h1, h2 {  
     font-family: "Press Start 2P";
     text-align: center;
     letter-spacing: 0.05em;
@@ -40,8 +36,15 @@ ul {
 }
 
 header, footer {
-    background: #4a4a4a;
     height: 240px;
+}
+
+footer {
+    background-color: #1D1F1D;
+}
+
+.social, .game-description-main-part {
+    background: linear-gradient(255.12deg, #949B93 -0.98%, #99A38C 100%);
 }
 
 .authorization-section {
@@ -119,9 +122,9 @@ header, footer {
 
 .section-refs li {
     display: inline;
-    margin: 25px;
+    margin: 30px;
     padding-bottom: -50px;
-    font-size: 35px;
+    font-size: 18px;
 }
 
 .section-refs li a {
@@ -137,13 +140,18 @@ header, footer {
 .enter-button {
     display: flex;
     float: right;
-    background-color: #BDE038;
-    padding: 20px;
+    background-color: transparent;
+    padding: 15px 40px;
     border-radius: 7px;
-    border: none;
+    border: 2px solid #BDE038;
     font-family: 'Montserrat';
     margin-top: -70px;
     margin-right: 50px;
+    color: white;
+    font-size: 18px;
+    font-weight: 600;
+    line-height: 22px;
+    letter-spacing: 0.05em;
 }
 
 .game-logo {
@@ -162,18 +170,20 @@ header, footer {
 
 .game-description-start {
     margin-top: 0;
+    margin-bottom: 30px;
 }
 
 .platforms-logo {
-    border-top: 2px solid rgb(255, 255, 255);
+    border-top: 1px solid rgb(255, 255, 255);
     display: inline;
-    padding-top: 50px;
+    padding-top: 70px;
 }
 
 .ps5-logo, .win10-logo {  
     width: 280px;
     height: 60px;
     margin: 5px;   
+    filter: grayscale(1) brightness(1000%);
 }
 
 .ps5-logo {
@@ -189,10 +199,10 @@ header, footer {
 }
 
 .buy-button {
-    padding: 12px 32px;
+    padding: 16px 65px;
     width: fit-content;
-    background-color: rgb(27, 40, 56);
-    border-radius: 30px;
+    background-color: #BDE038;
+    border-radius: 4px;
     box-shadow: 0px 5px 15px 5px black;
     transition: 0.5s;
 }
@@ -202,28 +212,38 @@ header, footer {
     transition: 0.5s;
 }
 
-.buy-button img {
-    position: relative;
-    float: left;
-    width: 70px;
-    height: 70px;
-    right: 10px;
-}
-
 .buy-button p {
     position: relative;
-    float: right;
-    font-size: 40px;
-    font-weight: 100;
+    font-family: "Montserrat";
+    font-size: 26px;
+    line-height: 32px;
+    font-weight: 600;
     letter-spacing: 0.05em;
-    text-transform: uppercase;
-    color: white;
     margin: 5% auto;
 }
 
 .start-section {
     text-align: center;
-    margin-bottom: 150px;
+}
+
+.start-section-content {
+    position: relative;
+    height: 100%;
+    padding-top: 130px;
+}
+
+.start-section-background {
+    position: absolute;
+    z-index: -1;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(180deg, rgba(0, 0, 0, 0.7) 36.15%, rgba(0, 0, 0, 0) 94.38%);
+}
+
+.game-description {
+    margin-top: -150px;
 }
 
 .game-description h2 {
@@ -232,26 +252,43 @@ header, footer {
 
 .game-description .main-description {
     margin-bottom: 50px;
+    padding: 0 20%;
+}
+
+.game-description-main-part {
+    margin-top: 250px;
 }
 
 .game-description-subsections {
     display: grid;
+    justify-content: center;
     grid-template-columns: repeat(3, 1fr);
     margin-bottom: 100px;
 }
 
 .game-description-subsections li{
     display: inline;
-    background-color: rgb(199, 199, 199);
     margin: 20px;
     padding: 20px;
-    border-radius: 20px;
-    box-shadow: 0px 5px 15px 5px #000;
 }
 
-.game-description-subsections li a {
+.subsection-ref {
     text-decoration: none;
     color: black;
+    font-weight: 500;
+    font-size: 24px;
+    line-height: 29px;
+    letter-spacing: 0.12em;
+    padding-bottom: 5px;
+}
+
+.subsection-ref:hover {
+    font-weight: 800;
+}
+
+.subsection-ref:focus {
+    font-weight: 800;
+    border-bottom: 8px solid #BDE038;
 }
 
 .subsection-description {
@@ -260,17 +297,31 @@ header, footer {
 
 .subsection-description aside {
     display: grid;
-    grid-template-rows: repeat(2, 50%);
+    grid-template-rows: 1fr 1fr;
     align-items: center;
     width: 50%;
     row-gap: 20px;
+    padding-bottom: 2%;
+}
+
+.subsection-image {
+    position: relative;
+    top: 0;
+    left: 15%;
+    width: 70%; 
+    object-fit: contain;
+    border-radius: 3px;
 }
 
 .subsection-description section {
     position: relative;
-    float: right;
-    width: 50%;
+    float: right;  
+    top: 150px;
     right: 5%;
+    padding-bottom: 5%;
+    width: 40%;
+    line-height: 205.4%;
+    color: #1D1F1D;
 }
 
 .subsection-description.subsection-2, .subsection-description.subsection-3 {
@@ -282,15 +333,27 @@ header, footer {
 }
 
 .story section {
-    float: left;
-    width: 50%;
+    position: relative;
+    float: left;  
+    left: 5%;
+    padding-bottom: 5%;
+    width: 40%;
+    line-height: 205.4%;
 }
 
 .story aside {
-    display: flex;
-    flex-direction: column;
+    display: grid;
     align-items: center;
     width: 50%;
+}
+
+.story-image {
+    position: relative;
+    top: 0;
+    left: 35%;
+    width: 70%; 
+    object-fit: contain;
+    border-radius: 3px;
 }
 
 .video-demo {
@@ -423,8 +486,16 @@ header, footer {
     margin-top: -30px;
 }
 
+.social h2 {
+    color: #202220;
+}
+
+.feedbacks {
+    
+}
+
 .contacts {
-    margin-bottom: 100px;
+    
 }
 
 .contacts h2 {
@@ -446,10 +517,11 @@ header, footer {
     height: 100px;
     text-align: center;
     font-size: 20px;
-    border-radius: 20px;
+    border-radius: 4px;
     border: none;
     box-shadow: 0px 10px 15px 2px #000;
     transition: 0.3s;
+    background-color: #F0EEE5;
 }
 
 .social-button:hover {
@@ -457,27 +529,16 @@ header, footer {
     transition: 0.5s;
 }
 
-.social-button.vk {
-    background-color: rgb(20, 112, 193);
-}
-
-.social-button.email {
-    background-color: rgb(172, 136, 88);
-}
-
-.social-button.telegram {
-    background-color: rgb(101, 167, 225);
-}
-
 .social-button p {
     float: right;
     position: relative;
     right: 50px;
     text-align: left;
-    color: white;
+    color: #1D1F1D;
+    font-family: "Montserrat";
     font-size: 25px;
-    font-weight: 700;
-    letter-spacing: 0.05em;
+    font-weight: 600;
+    letter-spacing: 0.02em;
 }
 
 .social-logo {

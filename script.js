@@ -9,6 +9,10 @@ var authorizationForm = document.getElementById('authorization-form');
 var registrationForm = document.getElementById('registration-form');
 var isMouseOverForm = false;
 
+$(function() {
+    $('.subsection-ref.subsection-ref-1').focus();
+});
+
 authorizationForm.addEventListener('mouseenter', function(e) {
     isMouseOverForm = true;
 });
