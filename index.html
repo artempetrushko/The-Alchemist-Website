@@ -19,31 +19,42 @@
                     <li><a href="#contacts">Контакты</a></li>
                 </ul>
             </nav>   
-            <button class="enter-button" onclick="showAuthorizationForm(); return false">Вход</button>      
+            <button class="enter-button" onclick="showAuthorizationSection(); return false">Вход</button>      
         </header>
-        <div class="authorization-section" id="authorization-section" onclick="hideAuthorizationForm(); return false">
+        <div class="authorization-section" id="authorization-section">
             <form class="authorization-form" id="authorization-form">
-                <a class="close-form-button" onclick="closeForms(); return false"></a>
-                <p>Авторизация</p>
-                <label for="username">E-mail или имя пользователя</label><br>
-                <p><input type="text" id="auth-username" placeholder="username"></p>
-                <label for="password">Пароль</label><br>
-                <p><input type="password" id="auth-password" placeholder="password"></p>
-                <input type="submit"><br>
-                <a class="registration-button" onclick="showRegistrationForm(); return false">Регистрация</button>              
+                <div class="form-header">
+                    <a class="close-form-button" onclick="hideAuthorizationSection(); return false"></a>
+                    <img class="authorization-logo" src="resources/registration-logo.png">
+                    <h3>Авторизация</h3>
+                </div>   
+                <div class="form-body">
+                    <label for="username">E-mail или имя пользователя</label>
+                    <p><input type="text" id="auth-username" placeholder="Username"></p>
+                    <label for="password">Пароль</label>
+                    <p><input type="password" id="auth-password" placeholder="Password"></p>
+                    <button>Войти</button>
+                    <a class="registration-ref" href="#" onclick="showRegistrationForm(); return false">Регистрация</a> 
+                </div>                                    
             </form>     
             <form class="registration-form" id="registration-form">
-                <a class="close-form-button"></a>
-                <p>Регистрация</p>
-                <label for="username">Имя пользователя</label><br>
-                <p><input type="text" id="reg-username" placeholder="username"></p>
-                <label for="username">E-mail</label><br>
-                <p><input type="text" id="reg-email" placeholder="email@email.com"></p>
-                <label for="password">Пароль</label><br>
-                <p><input type="password" id="reg-password" placeholder="password"></p>
-                <label for="password">Повторите пароль</label><br>
-                <p><input type="password" id="reg-repeat-password" placeholder="password"></p>
-                <input type="submit">
+                <div class="form-header">
+                    <a class="close-form-button" onclick="hideAuthorizationSection(); return false"></a>
+                    <img class="authorization-logo" src="resources/registration-logo.png">
+                    <h3>Регистрация</h3>
+                </div>
+                <div class="form-body registration-form-body">
+                    <label for="username">Имя пользователя</label>
+                    <p><input type="text" id="reg-username" placeholder="Username"></p>
+                    <label for="username">E-mail</label>
+                    <p><input type="text" id="reg-email" placeholder="Email@email.com"></p>
+                    <label for="password">Пароль</label>
+                    <p><input type="password" id="reg-password" placeholder="Password"></p>
+                    <label for="password">Повторите пароль</label>
+                    <p><input type="password" id="reg-repeat-password" placeholder="Password"></p>
+                    <button>Зарегистрироваться</button>
+                    <p class="authorization-ref">Уже зарегистрировались? <a class="authorization-ref" href="#" onclick="showAuthorizationForm(); return false">Войти</a></p>
+                </div>       
             </form>       
         </div>
         <div title="Начальный раздел" class="start-section">
@@ -113,105 +124,103 @@
                 </article>
             </div>        
         </div>
-        <div title="Лор">
-            <h2>Предыстория</h2>
-            <article class="story">
+        <div title="Лор" class="story-section">  
+            <div class="story-section-left">
+                <h2>Предыстория</h2>
                 <section align="justify">Персонаж - профессиональный и величайший алхимик, добившийся очень многого. Однако его главная цель 
-                    по прежнему остается недостигнутой: создание эликсира вечной жизни/философского камня. В погоне за 
-                    бессмертием, он, в ходе своих экспериментов, нещадно использовал всё и всех. Для него любые методы 
-                    оправдывали средства, и его не заботило, что останется после его работы. Учёный проводил тысячи опытов, 
-                    в ходе которых накапливалось много отходов, недоваренных существ.
+                        по прежнему остается недостигнутой: создание эликсира вечной жизни/философского камня. В погоне за 
+                        бессмертием, он, в ходе своих экспериментов, нещадно использовал всё и всех. Для него любые методы 
+                        оправдывали средства, и его не заботило, что останется после его работы. Учёный проводил тысячи опытов, 
+                        в ходе которых накапливалось много отходов, недоваренных существ.
                 </section>
                 <!--<button>Больше</button>-->
-                <aside>
-                    <img class="story-image" src="resources/why-cow.jpg">
-                </aside>
-            </article>        
+            </div>   
+            <div class="story-section-right">
+                <img class="story-image" src="resources/why-cow.jpg"> 
+            </div>                
         </div>
         <div title="Видео-демонстрация" class="video-demo" id="video-demo">
             <h2>Видео-демонстрация</h2>
             <video class="video-player" src="resources/rock-video.mp4" controls preload="metadata">
-        </div><br>
+        </div>
         <div title="Галерея" class="gallery" id="gallery">
             <h2 class="header-gallery">Галерея</h2>
-            <section>
-                <img class="gallery-photo main-photo" src="resources/why-cow.jpg">
-                <section class="gallery-buttons">
-                    <button class="gallery-button previous-image">Назад</button>
-                    <button class="gallery-button next-image">Далее</button>
-                </section>         
-            </section>
-            <section class="gallery-carousel">
-                <img class="gallery-photo additional-photo" src="resources/why-cow.jpg">
-                <img class="gallery-photo additional-photo" src="resources/why-cow.jpg">
-                <img class="gallery-photo additional-photo" src="resources/why-cow.jpg">
-                <img class="gallery-photo additional-photo" src="resources/why-cow.jpg">
-            </section>
+            <img class="gallery-photo main-photo" src="resources/why-cow.jpg">  
+            <div>
+                <section class="gallery-carousel">                    
+                    <img class="gallery-photo additional-photo photo-1" src="resources/gallery-photo-1.png">
+                    <img class="gallery-photo additional-photo photo-2" src="resources/gallery-photo-2.png">
+                    <img class="gallery-photo additional-photo photo-3" src="resources/gallery-photo-3.png">
+                    <img class="gallery-photo additional-photo photo-4" src="resources/gallery-photo-4.png">           
+                </section>
+            </div>           
         </div>
         <div title="Статистика" class="stats" id="stats">
             <h2>Статистика</h2>
+            <p class="stats-section-description">За всё время сущестования проекта игроки:</p>
             <div class="stats-details">
-                <div class="stats-details-chapter-1">
-                    <section>
-                        <img class="stats-image" src="resources/why-cow.jpg">
-                        <p class="stats-text stats-value">2 000 000+</p>
-                        <p class="stats-text stats-description">Совершено забегов</p>
-                    </section>
-                    <section>
-                        <img class="stats-image" src="resources/why-cow.jpg">
-                        <p class="stats-text stats-value">5 000 000+</p>
-                        <p class="stats-text stats-description">Изучено рецептов</p>
-                    </section>
-                    <section>
-                        <img class="stats-image" src="resources/why-cow.jpg">
-                        <p class="stats-text stats-value">12 000 000+</p>
-                        <p class="stats-text stats-description">Убито врагов</p>
-                    </section>
-                </div>
-                <div class="stats-details-chapter-2">
-                    <section>
-                        <img class="stats-image" src="resources/why-cow.jpg">
-                        <p class="stats-text stats-value">3 000 000+</p>
-                        <p class="stats-text stats-description">Проведено часов</p>
-                    </section>
-                    <section>
-                        <img class="stats-image" src="resources/why-cow.jpg">
-                        <p class="stats-text stats-value">112 000 000+</p>
-                        <p class="stats-text stats-description">Километров пройдено</p>
-                    </section>
-                </div>             
+                <section>
+                    <img class="stats-image" src="resources/stats-logo-1.png">
+                    <p class="stats-text stats-value">2 000 000+</p>
+                    <p class="stats-text stats-description">Совершили забегов</p>
+                </section>
+                <section>
+                    <img class="stats-image" src="resources/stats-logo-3.png">
+                    <p class="stats-text stats-value">5 000 000+</p>
+                    <p class="stats-text stats-description">Изучили рецептов</p>
+                </section>
+                <section>
+                    <img class="stats-image" src="resources/stats-logo-2.png">
+                    <p class="stats-text stats-value">12 000 000+</p>
+                    <p class="stats-text stats-description">Убили врагов</p>
+                </section>
+                <section>
+                    <img class="stats-image" src="resources/stats-logo-1.png">
+                    <p class="stats-text stats-value">3 000 000+</p>
+                    <p class="stats-text stats-description">Провели часов</p>
+                </section>
+                <section>
+                    <img class="stats-image" src="resources/stats-logo-3.png">
+                    <p class="stats-text stats-value">112 000 000+</p>
+                    <p class="stats-text stats-description">Километров прошли</p>
+                </section>     
+                <section>
+                    <img class="stats-image" src="resources/stats-logo-2.png">
+                    <p class="stats-text stats-value">17 000 000+</p>
+                    <p class="stats-text stats-description">Одолели боссов</p>
+                </section>         
             </div>         
         </div>
         <div title="Команда" class="team">
             <h2>Команда</h2>
             <div class="team-table">
                 <section class="team-participant">
-                    <img class="participant-photo" src="resources/why-cow.jpg">
+                    <img class="participant-photo" src="resources/participant-1.png">
                     <p class="participant-name">Арсений Стук</p>
                     <p class="participant-position">Геймдизайнер</p>
                 </section>
                 <section class="team-participant">
-                    <img class="participant-photo" src="resources/why-cow.jpg">
+                    <img class="participant-photo" src="resources/participant-2.png">
                     <p class="participant-name">Сергей Худяков</p>
                     <p class="participant-position">Тимлид</p>
                 </section>
                 <section class="team-participant">
-                    <img class="participant-photo" src="resources/why-cow.jpg">
+                    <img class="participant-photo" src="resources/participant-3.png">
                     <p class="participant-name">Анна Васильева</p>
                     <p class="participant-position">Дизайнер</p>
                 </section>
                 <section class="team-participant">
-                    <img class="participant-photo" src="resources/why-cow.jpg">
-                    <p class="participant-name">Андрей Бубнов</p>
-                    <p class="participant-position">Unity-разработчик</p>
-                </section>
-                <section class="team-participant">
-                    <img class="participant-photo" src="resources/why-cow.jpg">
+                    <img class="participant-photo" src="resources/participant-1.png">
                     <p class="participant-name">Андрей Мусиенко</p>
                     <p class="participant-position">Unity-разработчик / Backend-разработчик</p>
                 </section>
                 <section class="team-participant">
-                    <img class="participant-photo" src="resources/why-cow.jpg">
+                    <img class="participant-photo" src="resources/participant-2.png">
+                    <p class="participant-name">Андрей Бубнов</p>
+                    <p class="participant-position">Unity-разработчик</p>
+                </section>
+                <section class="team-participant">
+                    <img class="participant-photo" src="resources/participant-1.png">
                     <p class="participant-name">Артём Петрушко</p>
                     <p class="participant-position">Unity-разработчик / Frontend-разработчик</p>
                 </section>

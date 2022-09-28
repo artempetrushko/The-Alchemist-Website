@@ -9,7 +9,7 @@ body {
     letter-spacing: 0.02em;  
 }
 
-body, button {
+body, button, input, p {
     font-family: "Montserrat";
     font-style: normal;
     font-size: 20px;
@@ -26,6 +26,14 @@ h1 {
 h2 {
     font-size: 40px;
     line-height: 40px;
+}
+
+h3 {
+    font-weight: 700;
+    font-size: 24px;
+    line-height: 29px; 
+    letter-spacing: 0.05em; 
+    margin-top: 10px;
 }
 
 h1, h2 {  
@@ -75,15 +83,107 @@ footer {
     display: none;
     background-color: white;
     position: fixed;
-    width: fit-content;  
+    width: 480px;
     color: black;
-    border-radius: 30px;
+    border-radius: 8px;
+    margin: 0;
+}
+
+.authorization-form {
+    height: 580px;
+}
+
+.registration-form {
+    height: 730px;
+}
+
+.form-header, .form-body {
     padding: 30px;
+    padding-bottom: 20px;
+}
+
+.form-header {
+    border-bottom: 2px solid rgb(221, 221, 221);
+}
+
+.form-body {
+    position: relative;
+    padding-top: 20px;
+}
+
+.authorization-logo {
+    width: 100px;
+    height: 100px;
+    margin-top: 20px;
+}
+
+.authorization-form label, .registration-form label {
+    position: relative;
+    display: flex;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 17px;
+}
+
+.form-body p {
+    margin: 8px 0 16px 0;
+}
+
+.form-body button {
+    margin-top: 30px;
+    font-weight: 600;
+    letter-spacing: 0.05em;
+}
+
+.form-body button:hover {
+    font-weight: 300;
+    background-color: #a1bd3c;
+}
+
+.registration-ref, .authorization-ref, .form-body p.authorization-ref {
+    margin-top: 20px;
+    color: black;
+    font-weight: 600;
+    font-size: 17px;
+    line-height: 17px; 
+    letter-spacing: 0.05em; 
+}
+
+.registration-ref {
+    display: flex;
+    justify-content: center;
+}
+
+.form-body p.authorization-ref {
+}
+
+.registration-ref:hover {
+    color: rgb(87, 87, 87);
+}
+
+.authorization-form input, .registration-form input {
+    position: relative;
+    width: 100%;
+    border: 1px solid #989187;
+    border-radius: 8px;
+    padding: 11px 15px;
+    font-size: 14px;
+    line-height: 17px;
+    font-weight: 400;
+}
+
+.authorization-form button, .registration-form button {
+    position: relative;
+    width: 100%;
+    background-color: #BDE038;
+    border: none;
+    border-radius: 4px;
+    padding: 14px;
 }
 
 .close-form-button {
 	position: absolute;
-	top: 30px;
+	top: 20px;
 	right: 20px;
 	width: 24px;
 	height: 24px;
@@ -156,6 +256,11 @@ footer {
     font-weight: 600;
     line-height: 22px;
     letter-spacing: 0.05em;
+}
+
+.enter-button:hover {
+    color: rgb(194, 194, 194);
+    border-color: #a1bd3c;
 }
 
 .game-logo {
@@ -333,41 +438,55 @@ footer {
     display: none;
 }
 
-.story {
-    display: table;
+.story-section {
+    display: flex;
+    margin-top: 150px;
 }
 
-.story section {
-    position: relative;
-    float: left;  
-    left: 5%;
-    padding-bottom: 5%;
+.story-section-left {
+    width: 60%;
+}
+
+.story-section-right {
     width: 40%;
-    line-height: 205.4%;
 }
 
-.story aside {
-    display: grid;
-    align-items: center;
-    width: 50%;
+.story-section h2 {
+    display: flex;
+    position: relative;
+    margin-left: 12%;
+    margin-bottom: 50px;
+    width: fit-content;
+}
+
+.story-section section {
+    display: flex;
+    position: relative;
+    margin-left: 12%;
+    padding-bottom: 5%;
+    line-height: 205.4%;
+    width: 70%;
 }
 
 .story-image {
     position: relative;
-    top: 0;
-    left: 35%;
-    width: 70%; 
-    object-fit: contain;
     border-radius: 3px;
+    width: 100%;
+    right: 10%;
 }
 
 .video-demo {
+    margin-top: 150px;
     margin-bottom: 50px;
 }
 
+.video-demo h2 {
+    margin-bottom: 150px;
+}
+
 .video-player {
-    width: 1280px;
-    height: 720px;
+    width: 70%;
+    height: auto;
     box-shadow: 0px 5px 15px 5px black;
     margin-top: -30px;
 }
@@ -377,23 +496,27 @@ footer {
 }
 
 .gallery-photo {
-    border-radius: 25px;
+    border-radius: 5px;
     box-shadow: 0px 5px 15px 5px #000;
 }
 
 .main-photo {
-    width: 1280px;
-    height: 720px;
+    width: 60%;
+    height: auto;
     margin-bottom: 50px;
 }
 
 .additional-photo {
-    width: 420px;
-    height: 236px;
+    width: 100%;
+    height: auto;
+}
+
+.additional-photo:focus {
+    transform: scale(1.5);
 }
 
 .gallery {
-    margin-bottom: 150px;
+    margin: 150px 0;
 }
 
 .gallery-buttons {
@@ -411,7 +534,7 @@ footer {
 .gallery-carousel {
     display: grid;
     justify-content: center;
-    grid-template-columns: repeat(4, minmax(420px, 420px));
+    grid-template-columns: repeat(4, minmax(20%, 20%));
     grid-column-gap: 30px;
 }
 
@@ -419,23 +542,22 @@ footer {
     margin-bottom: 150px;
 }
 
+.stats-section-description {
+    margin-top: 50px;
+    font-size: 25px;
+    font-weight: 500;
+    line-height: 205.4%;
+}
+
 .stats-details {
     display: grid;
-    grid-template-rows: repeat(2, 1fr);
-    grid-row-gap: 30px;
-}
-
-.stats-details-chapter-1 {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    margin-bottom: 20px;
-}
-
-.stats-details-chapter-2 {
-    display: grid;
     justify-content: center;
-    grid-template-columns: repeat(2, minmax(400px, 400px));
-    grid-column-gap: 280px;
+    grid-template-rows: repeat(2, 1fr);
+    grid-template-columns: repeat(3, 1fr);
+    grid-column-gap: 300px;
+    grid-row-gap: 200px;
+    width: fit-content;
+    margin: 150px auto 200px auto;
 }
 
 .stats-image {
@@ -443,19 +565,22 @@ footer {
     height: 200px;
 }
 
-.stats-text {
-    font-weight: 700;
+.stats-text {  
+    letter-spacing: 0.05em;
 }
 
 .stats-value {
     font-size: 40px;
-    margin-top: 15px;
+    line-height: 49px;
+    margin-top: 60px;
     margin-bottom: 0px;
 }
 
 .stats-description {
     font-size: 25px;
-    margin-top: 10px;
+    font-weight: 500;
+    line-height: 205.4%;
+    margin-top: 20px;
 }
 
 .team {
@@ -464,11 +589,12 @@ footer {
 
 .team-table {
     display: grid;
-    text-align: center;
+    justify-content: center;
     grid-template-rows: repeat(2, 1fr);
-    grid-template-columns: 1fr 1fr 1fr;
-    grid-row-gap: 100px;
-    margin-bottom: 150px;
+    grid-template-columns: repeat(3, 1fr);
+    grid-gap: 200px;
+    margin: 150px auto;
+    width: fit-content;
 }
 
 .participant-photo {
@@ -476,19 +602,22 @@ footer {
     height: 300px;
     border-radius: 170px;
     box-shadow: 0px 10px 10px 5px #000;
-}
-
-.participant-name, .participant-position {
-    font-weight: 700;
+    margin-bottom: 30px;
 }
 
 .participant-name {
-    font-size: 40px;
+    font-weight: 500;
+    letter-spacing: 0.12em;
+    font-size: 24px;
+    line-height: 29px;
+    margin-bottom: 0;
 }
 
 .participant-position {
-    font-size: 25px;
-    margin-top: -30px;
+    font-weight: 400;
+    font-size: 20px;
+    line-height: 205.4%;
+    letter-spacing: 0.05em;
 }
 
 .pixel-transition {

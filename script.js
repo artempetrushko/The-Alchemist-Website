@@ -9,15 +9,10 @@ var authorizationForm = document.getElementById('authorization-form');
 var registrationForm = document.getElementById('registration-form');
 var isMouseOverForm = false;
 
+$('.main-photo').attr("src", "resources/gallery-photo-1.png");
+
 $(function() {
     $('.subsection-ref.subsection-ref-1').focus();
-});
-
-authorizationForm.addEventListener('mouseenter', function(e) {
-    isMouseOverForm = true;
-});
-authorizationForm.addEventListener('mouseleave', function(e) {
-    isMouseOverForm = false;
 });
 
 function showSubsection(subsectionNumber) {
@@ -27,33 +22,35 @@ function showSubsection(subsectionNumber) {
     }
 }
 
-function showAuthorizationForm() {
+function showAuthorizationSection() {
     authorizationSection.style.display = formState.Flex;
-    authorizationForm.style.display = formState.Block;
-    registrationForm.style.display = formState.Hidden;
+    changeFormsState(formState.Block, formState.Hidden);
 }
 
-function hideAuthorizationForm() {
-    toggleAuthorizationForm(formState.Hidden);
+function hideAuthorizationSection() {
+    changeFormsState(formState.Hidden, formState.Hidden);
+    authorizationSection.style.display = formState.Hidden;
+}
+
+function showAuthorizationForm() {
+    changeFormsState(formState.Block, formState.Hidden);
 }
 
 function showRegistrationForm() {
-    toggleRegistrationForm();
+    changeFormsState(formState.Hidden, formState.Block);
 }
 
-function toggleAuthorizationForm(state) {
-    if (!isMouseOverForm) {
-        authorizationSection.style.display = state;
+function changeFormsState(authFormState, regFormState) {
+    authorizationForm.style.display = authFormState;
+    registrationForm.style.display = regFormState;
+}
+
+$('.additional-photo').click(function() {
+    var imageSource = $(this).attr("src");
+    $('.main-photo').attr("src", imageSource);
+
+    for (var i = 1; i <= 4; i++) {
+        var currentPhoto = $('.additional-photo.photo-' + i);      
+        currentPhoto.css('border', currentPhoto.is($(this)) ? '2px solid white' : 'none');
     }
-}
-
-function toggleRegistrationForm() {
-    authorizationForm.style.display = formState.Hidden;
-    registrationForm.style.display = formState.Block;
-}
-
-function closeForms() {
-    authorizationForm.style.display = formState.Hidden;
-    registrationForm.style.display = formState.Hidden;
-    authorizationSection.style.display = formState.Hidden;
-}
+});
