@@ -19,12 +19,18 @@
                     <li><a href="#contacts">Контакты</a></li>
                 </ul>
             </nav>   
-            <button class="enter-button" onclick="showAuthorizationSection(); return false">Вход</button>      
+            <div class="user-section">
+                <button class="enter-button" onclick="showAuthorizationSection(authorizationForm); return false">Вход</button>  
+                <div class="user-info">
+                    <p>User123User123User123User123</p>
+                    <img class="exit-icon" src="resources/exit-icon.png" onclick="logout(); return false">
+                </div>  
+            </div>             
         </header>
         <div class="authorization-section" id="authorization-section">
             <form class="authorization-form" id="authorization-form">
                 <div class="form-header">
-                    <a class="close-form-button" onclick="hideAuthorizationSection(); return false"></a>
+                    <a class="close-form-button" onclick="hideAuthorizationSection(authorizationForm); return false"></a>
                     <img class="authorization-logo" src="resources/registration-logo.png">
                     <h3>Авторизация</h3>
                 </div>   
@@ -33,13 +39,13 @@
                     <p><input type="text" id="auth-username" placeholder="Username"></p>
                     <label for="password">Пароль</label>
                     <p><input type="password" id="auth-password" placeholder="Password"></p>
-                    <button>Войти</button>
-                    <a class="registration-ref" href="#" onclick="showRegistrationForm(); return false">Регистрация</a> 
+                    <button onclick="login(); return false">Войти</button>
+                    <a class="registration-ref" href="#" onclick="showRegistrationForm(registrationForm); return false">Регистрация</a> 
                 </div>                                    
             </form>     
             <form class="registration-form" id="registration-form">
                 <div class="form-header">
-                    <a class="close-form-button" onclick="hideAuthorizationSection(); return false"></a>
+                    <a class="close-form-button" onclick="hideAuthorizationSection(registrationForm); return false"></a>
                     <img class="authorization-logo" src="resources/registration-logo.png">
                     <h3>Регистрация</h3>
                 </div>
@@ -52,7 +58,7 @@
                     <p><input type="password" id="reg-password" placeholder="Password"></p>
                     <label for="password">Повторите пароль</label>
                     <p><input type="password" id="reg-repeat-password" placeholder="Password"></p>
-                    <button>Зарегистрироваться</button>
+                    <button onclick="register(); return false">Зарегистрироваться</button>
                     <p class="authorization-ref">Уже зарегистрировались? <a class="authorization-ref" href="#" onclick="showAuthorizationForm(); return false">Войти</a></p>
                 </div>       
             </form>       
@@ -83,7 +89,7 @@
                     <li><a class="subsection-ref subsection-ref-3" href="#" onclick="showSubsection(3); return false">Побеждай</a></li>
                 </ul>
                 <article class="subsection-description subsection-1" title="Описание блока Исследуй">
-                    <section align="justify">Инди рогалик, основным темами которого являются алхимия, зельеварение и крафт. Бегаем по уровням, 
+                    <section align="justify">Паста про исследования<br>Инди рогалик, основным темами которого являются алхимия, зельеварение и крафт. Бегаем по уровням, 
                         сражаемся, собираем ингредиенты, рецепты, экспериментируем, создавая предметы с уникальными эффектами, 
                         изучаем свойства разных материалов, крафтим магические предметы.С каждым забегом в данже игрок узнает 
                         все больше о рецептах и свойствах разных материалов. После смерти игрок попадает в хаб, и у него не 
@@ -96,7 +102,7 @@
                     </aside>
                 </article>
                 <article class="subsection-description subsection-2" title="Описание блока Экспериментируй">
-                    <section align="justify">Инди рогалик, основным темами которого являются алхимия, зельеварение и крафт. Бегаем по уровням, 
+                    <section align="justify">Паста про эксперименты<br>Инди рогалик, основным темами которого являются алхимия, зельеварение и крафт. Бегаем по уровням, 
                         сражаемся, собираем ингредиенты, рецепты, экспериментируем, создавая предметы с уникальными эффектами, 
                         изучаем свойства разных материалов, крафтим магические предметы.С каждым забегом в данже игрок узнает 
                         все больше о рецептах и свойствах разных материалов. После смерти игрок попадает в хаб, и у него не 
@@ -110,7 +116,7 @@
                     </aside>
                 </article>
                 <article class="subsection-description subsection-3" title="Описание блока Побеждай">
-                    <section align="justify">Инди рогалик, основным темами которого являются алхимия, зельеварение и крафт. Бегаем по уровням, 
+                    <section align="justify">Паста про боевку<br>Инди рогалик, основным темами которого являются алхимия, зельеварение и крафт. Бегаем по уровням, 
                         сражаемся, собираем ингредиенты, рецепты, экспериментируем, создавая предметы с уникальными эффектами, 
                         изучаем свойства разных материалов, крафтим магические предметы.С каждым забегом в данже игрок узнает 
                         все больше о рецептах и свойствах разных материалов. После смерти игрок попадает в хаб, и у него не 
@@ -159,32 +165,32 @@
             <h2>Статистика</h2>
             <p class="stats-section-description">За всё время сущестования проекта игроки:</p>
             <div class="stats-details">
-                <section>
+                <section class="stats-parameter-1">
                     <img class="stats-image" src="resources/stats-logo-1.png">
                     <p class="stats-text stats-value">2 000 000+</p>
                     <p class="stats-text stats-description">Совершили забегов</p>
                 </section>
-                <section>
+                <section class="stats-parameter-2">
                     <img class="stats-image" src="resources/stats-logo-3.png">
                     <p class="stats-text stats-value">5 000 000+</p>
                     <p class="stats-text stats-description">Изучили рецептов</p>
                 </section>
-                <section>
+                <section class="stats-parameter-3">
                     <img class="stats-image" src="resources/stats-logo-2.png">
                     <p class="stats-text stats-value">12 000 000+</p>
                     <p class="stats-text stats-description">Убили врагов</p>
                 </section>
-                <section>
+                <section class="stats-parameter-4">
                     <img class="stats-image" src="resources/stats-logo-1.png">
                     <p class="stats-text stats-value">3 000 000+</p>
                     <p class="stats-text stats-description">Провели часов</p>
                 </section>
-                <section>
+                <section class="stats-parameter-5">
                     <img class="stats-image" src="resources/stats-logo-3.png">
                     <p class="stats-text stats-value">112 000 000+</p>
                     <p class="stats-text stats-description">Километров прошли</p>
                 </section>     
-                <section>
+                <section class="stats-parameter-6">
                     <img class="stats-image" src="resources/stats-logo-2.png">
                     <p class="stats-text stats-value">17 000 000+</p>
                     <p class="stats-text stats-description">Одолели боссов</p>
@@ -290,11 +296,12 @@
         </div>
         <div title="Связь с разрабами" class="social">
             <div title="Отзывы" class="feedbacks">
-                <h2>Оставить отзыв</h2>            
+                <h2>Оставить отзыв</h2>    
+                <p class="message-before-feedback">Нам очень важно ваше мнение! Если хотите оставить отзыв, <a href="#" onclick="showAuthorizationSection(authorizationForm); return false">войдите</a> или <a href="#" onclick="showAuthorizationSection(registrationForm); return false">зарегистрируйтесь</a>.</p>        
                 <form class="feedback-form"> 
                     <p>Если Вы хотите поделиться с разработчиками мнением об игре, можете сделать это здесь :) </p>
                     <p><input class="feedback-input-field" type="text" placeholder="Поле для отзыва"></p>
-                    <button class="feedback-submit-button">Отправить</button>
+                    <button class="feedback-submit-button" onclick="sendFeedback(); return false">Отправить</button>
                 </form>        
             </div>
             <div title="Наши контакты" class="contacts" id="contacts">
@@ -341,6 +348,7 @@
             <img class="game-logo bottom-game-logo" src="resources/pixel-logo-temporary.png">     
         </footer>
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
-        <script src="script.js"></script>
+        <script src="requests.js"></script>
+        <script src="script.js"></script>    
     </body>
 </html>

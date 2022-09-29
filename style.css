@@ -69,7 +69,7 @@ footer {
 .authorization-section {
     display: none;
     position: fixed;
-    z-index: 100;
+    z-index: 200;
     top: 0;
     left: 0;
     width: 100%;
@@ -154,9 +154,6 @@ footer {
     justify-content: center;
 }
 
-.form-body p.authorization-ref {
-}
-
 .registration-ref:hover {
     color: rgb(87, 87, 87);
 }
@@ -219,6 +216,13 @@ footer {
     margin: auto;
 }
 
+.navigation.top-nav {
+}
+
+.navigation.bottom-nav {
+    margin-left: 25%;
+}
+
 .section-refs {
    display: flex;
    position: relative;
@@ -243,9 +247,12 @@ footer {
     color:rgb(189, 189, 189)
 }
 
-.enter-button {
-    position: absolute;
-    right: 150;
+.user-section {
+    position: relative;
+    margin-right: 8%;
+}
+
+.enter-button {    
     background-color: transparent;
     height: fit-content;
     padding: 15px 40px;
@@ -263,18 +270,38 @@ footer {
     border-color: #a1bd3c;
 }
 
+.user-info {
+    display: flex;
+}
+
+.user-info p {
+    margin: auto 20px;
+    max-width: 100px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.exit-icon {
+    width: 30px;
+    height: 30px;
+}
+
+.exit-icon:hover {
+    filter: brightness(60%);
+}
+
 .game-logo {
+    position: relative;
     width: 150px;
-    height: 180px;  
-    position: absolute; 
+    height: 180px;     
 }
 
 .top-game-logo {
-    left: 150;
+    margin-left: 8%;
 }
 
 .bottom-game-logo {   
-    right: 150;    
+    margin-right: 8%;    
 }
 
 .game-description-start {
@@ -378,6 +405,7 @@ footer {
 .game-description-subsections li{
     display: inline;
     margin: 20px;
+    margin-top: 80px;
     padding: 20px;
 }
 
@@ -396,7 +424,7 @@ footer {
     font-weight: 800;
 }
 
-.subsection-ref:focus {
+.subsection-ref.focused {
     font-weight: 800;
     border-bottom: 8px solid #BDE038;
 }
@@ -637,8 +665,15 @@ footer {
     margin-bottom: 200px;
 }
 
+.message-before-feedback a {
+    color: black;
+}
+
+.message-before-feedback a:hover {
+    color: rgb(77, 77, 77);
+}
+
 .feedback-form {
-    display: flex;
     flex-direction: column;
     width: 50%;
     margin: 0 auto;

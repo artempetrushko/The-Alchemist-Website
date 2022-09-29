@@ -1,49 +1,16 @@
-const formState = {
-    Block : 'block',
-    Flex : 'flex',
-    Hidden : 'none'
-};
-
-var authorizationSection = document.getElementById("authorization-section");
-var authorizationForm = document.getElementById('authorization-form');
-var registrationForm = document.getElementById('registration-form');
-var isMouseOverForm = false;
+var authorizationSection = $('.authorization-section');
+var authorizationForm = $('.authorization-form');
+var registrationForm = $('.registration-form');
+var lastOpenedForm = null;
 
 $('.main-photo').attr("src", "resources/gallery-photo-1.png");
+$('.additional-photo.photo-1').css('border', '2px solid white')
+                              .css('transform', 'scale(1.1)');
 
-$(function() {
-    $('.subsection-ref.subsection-ref-1').focus();
-});
+$('.user-info').hide();
+$('.feedback-form').hide();
 
-function showSubsection(subsectionNumber) {
-    gameSubDescriptions = document.getElementsByClassName("subsection-description");
-    for (let i = 1; i <= 3; i++) {
-        gameSubDescriptions[i - 1].style.display = i === subsectionNumber ? 'table' : 'none';
-    }
-}
-
-function showAuthorizationSection() {
-    authorizationSection.style.display = formState.Flex;
-    changeFormsState(formState.Block, formState.Hidden);
-}
-
-function hideAuthorizationSection() {
-    changeFormsState(formState.Hidden, formState.Hidden);
-    authorizationSection.style.display = formState.Hidden;
-}
-
-function showAuthorizationForm() {
-    changeFormsState(formState.Block, formState.Hidden);
-}
-
-function showRegistrationForm() {
-    changeFormsState(formState.Hidden, formState.Block);
-}
-
-function changeFormsState(authFormState, regFormState) {
-    authorizationForm.style.display = authFormState;
-    registrationForm.style.display = regFormState;
-}
+showSubsection(1);
 
 $('.additional-photo').click(function() {
     var imageSource = $(this).attr("src");
@@ -52,5 +19,49 @@ $('.additional-photo').click(function() {
     for (var i = 1; i <= 4; i++) {
         var currentPhoto = $('.additional-photo.photo-' + i);      
         currentPhoto.css('border', currentPhoto.is($(this)) ? '2px solid white' : 'none');
+        currentPhoto.css('transform', currentPhoto.is($(this)) ? 'scale(1.1)' : 'none');
     }
 });
+
+function showSubsection(subsectionNumber) {
+    gameSubDescriptions = $('.subsection-description');
+    for (var i = 1; i <= gameSubDescriptions.length; i++) {
+        gameSubDescriptions.eq(i - 1).css('display', i === subsectionNumber ? 'table' : 'none');
+        if (i === subsectionNumber) {
+            $('.subsection-ref.subsection-ref-' + i).addClass('focused');
+        } else {
+            $('.subsection-ref.subsection-ref-' + i).removeClass('focused');
+        }
+    }
+}
+
+function showAuthorizationSection(selectedForm) {
+    authorizationSection.fadeIn().css('display', 'flex');
+    lastOpenedForm = selectedForm;
+    selectedForm.fadeIn(400);
+}
+
+function hideAuthorizationSection(currentForm) {
+    currentForm.fadeOut(300, function() {
+        authorizationSection.fadeOut();
+    });
+}
+
+function showAuthorizationForm() {
+    showNewForm(authorizationForm);
+}
+
+function showRegistrationForm() {
+    showNewForm(registrationForm);
+}
+
+function showNewForm(newForm) {
+    hideAndChangeLastOpenedForm(newForm);
+    newForm.fadeIn();
+}
+
+function hideAndChangeLastOpenedForm(newForm) {
+    lastOpenedForm.fadeOut(function() {
+        lastOpenedForm = newForm;
+    }); 
+}
