@@ -79,7 +79,9 @@ footer {
     align-items: center;
 }
 
-.authorization-form, .registration-form {
+.authorization-form, 
+.registration-form,
+.feedback-send-form {
     display: none;
     background-color: white;
     position: fixed;
@@ -95,6 +97,10 @@ footer {
 
 .registration-form {
     height: 730px;
+}
+
+.feedback-send-form {
+    height: 480px;
 }
 
 .form-header, .form-body {
@@ -176,6 +182,17 @@ footer {
     border: none;
     border-radius: 4px;
     padding: 14px;
+}
+
+.feedback-send-form .authorization-logo {
+    margin-top: 50px;
+}
+
+.feedback-sent-message {
+    position: relative;
+    font-size: 30px;
+    font-weight: 400;
+    line-height: 205.4%;
 }
 
 .close-form-button {
@@ -338,8 +355,9 @@ footer {
     padding: 16px 65px;
     width: fit-content;
     background-color: #BDE038;
+    border: none;
     border-radius: 4px;
-    box-shadow: 0px 5px 15px 5px black;
+    box-shadow: 0px 5px 15px 5px rgb(15, 15, 15);
     transition: 0.5s;
 }
 
@@ -360,11 +378,11 @@ footer {
 
 .start-section {
     text-align: center;
+    height: calc(100% - 240px);
 }
 
 .start-section-content {
-    position: relative;
-    height: 100%;
+    position: relative; 
     padding-top: 130px;
 }
 
@@ -383,29 +401,28 @@ footer {
 }
 
 .game-description h2 {
+    margin-top: 150px;
     margin-bottom: 30px;
 }
 
 .game-description .main-description {
-    margin-bottom: 50px;
+    margin-bottom: 200px;
     padding: 0 20%;
 }
 
 .game-description-main-part {
-    margin-top: 250px;
 }
 
 .game-description-subsections {
     display: grid;
     justify-content: center;
     grid-template-columns: repeat(3, 1fr);
-    margin-bottom: 100px;
+    margin-bottom: 50px;
 }
 
 .game-description-subsections li{
     display: inline;
     margin: 20px;
-    margin-top: 80px;
     padding: 20px;
 }
 
@@ -431,6 +448,7 @@ footer {
 
 .subsection-description {
     display: table;
+    margin-bottom: 50px;
 }
 
 .subsection-description aside {
@@ -468,7 +486,7 @@ footer {
 
 .story-section {
     display: flex;
-    margin-top: 150px;
+    margin-top: 100px;
 }
 
 .story-section-left {
@@ -503,13 +521,8 @@ footer {
     right: 10%;
 }
 
-.video-demo {
-    margin-top: 150px;
-    margin-bottom: 50px;
-}
-
 .video-demo h2 {
-    margin-bottom: 150px;
+    margin: 150px 0;
 }
 
 .video-player {
@@ -529,7 +542,7 @@ footer {
 }
 
 .main-photo {
-    width: 60%;
+    width: 50%;
     height: auto;
     margin-bottom: 50px;
 }
@@ -543,20 +556,31 @@ footer {
     transform: scale(1.5);
 }
 
-.gallery {
-    margin: 150px 0;
+.gallery h2 {
+    margin-top: 150px;
+    margin-bottom: 80px;
 }
 
-.gallery-buttons {
-    vertical-align: middle;
+.gallery-section {
+    display: flex;
 }
 
-.gallery-button.previous-image {
-    float: left;
+.gallery-carousel-button {
+    position: relative;
+    background-color: #1D1F1D;
+    border: none;
 }
 
-.gallery-button.next-image {
-    float: right;
+.gallery-carousel-button svg:hover polyline{
+    stroke-width: 3;
+}
+
+.gallery-arrow-left {
+    left: 3%;
+}
+
+.gallery-arrow-right {
+    right: 3%;
 }
 
 .gallery-carousel {
@@ -566,8 +590,8 @@ footer {
     grid-column-gap: 30px;
 }
 
-.stats {
-    margin-bottom: 150px;
+.stats h2{
+    margin-top: 150px;
 }
 
 .stats-section-description {
@@ -585,7 +609,7 @@ footer {
     grid-column-gap: 300px;
     grid-row-gap: 200px;
     width: fit-content;
-    margin: 150px auto 200px auto;
+    margin: 150px auto 0 auto;
 }
 
 .stats-image {
@@ -613,6 +637,10 @@ footer {
 
 .team {
     margin-bottom: 0px;
+}
+
+.team h2 {
+    margin-top: 150px;
 }
 
 .team-table {
@@ -646,12 +674,6 @@ footer {
     font-size: 20px;
     line-height: 205.4%;
     letter-spacing: 0.05em;
-}
-
-.pixel-transition {
-    position: absolute;
-    z-index: 100;
-    width: 100%;
 }
 
 .social {
@@ -739,7 +761,7 @@ footer {
     font-size: 20px;
     border-radius: 4px;
     border: none;
-    box-shadow: 0px 10px 15px 2px #000;
+    box-shadow: 0px 10px 25px 2px rgb(72, 72, 72);
     transition: 0.3s;
     background-color: #F0EEE5;
 }
@@ -766,4 +788,24 @@ footer {
     height: 70px;
     left: 30px;
     top: 5px;
+}
+
+.pixel-transition {
+    position: absolute;
+    z-index: 100;
+    width: 100%;
+}
+
+.pixel-transition.start-section-bottom {
+    position: relative;
+    transform: rotate(180deg);
+}
+
+.pixel-transition.game-description-bottom {
+    position: relative;
+    transform: rotate(180deg);
+}
+
+.pixel-transition.game-description-top {
+    position: relative;
 }

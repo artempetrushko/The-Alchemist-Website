@@ -61,7 +61,12 @@
                     <button onclick="register(); return false">Зарегистрироваться</button>
                     <p class="authorization-ref">Уже зарегистрировались? <a class="authorization-ref" href="#" onclick="showAuthorizationForm(); return false">Войти</a></p>
                 </div>       
-            </form>       
+            </form>     
+            <form class="feedback-send-form" id="feedback-send-form">
+                <a class="close-form-button" onclick="hideAuthorizationSection(feedbackSendForm); return false"></a>
+                <img class="authorization-logo" src="resources/registration-logo.png">
+                <p class="feedback-sent-message">Отзыв отправлен.<br>Спасибо!</p>     
+            </form>      
         </div>
         <div title="Начальный раздел" class="start-section">
             <img class="start-section-background" src="resources/header-background.png">
@@ -75,61 +80,245 @@
                 <section class="buy-section">
                     <button class="buy-button"><p>Купить</p></button>
                 </section> 
-            </div>                     
+            </div>                  
         </div>
         <div title="Описание игры" class="game-description" id="game-description">
+            <div class="pixel-transition start-section-bottom">
+                <svg width="100%" height="150px" stroke="#1D1F1D">
+                    <g class="level-1">
+                        <rect width="8.75%" height="16.67%" x="0"     y="0" fill="#1D1F1D"/>
+                        <rect width="42.5%" height="16.67%" x="10%"   y="0" fill="#1D1F1D"/>
+                        <rect width="1.25%" height="16.67%" x="55%"   y="0" fill="#1D1F1D"/>
+                        <rect width="42.5%" height="16.67%" x="57.5%" y="0" fill="#1D1F1D"/>
+                    </g>
+                    <g class="level-2">
+                        <rect width="6.25%" height="16.67%" x="0"      y="16.66%" fill="#1D1F1D"/>
+                        <rect width="2.5%"  height="16.67%" x="7.5%"   y="16.66%" fill="#1D1F1D"/>
+                        <rect width="1.25%" height="16.67%" x="13.75%" y="16.66%" fill="#1D1F1D"/>
+                        <rect width="2.5%"  height="16.67%" x="16.25%" y="16.66%" fill="#1D1F1D"/>
+                        <rect width="1.25%" height="16.67%" x="20%"    y="16.66%" fill="#1D1F1D"/>
+                        <rect width="32.5%" height="16.67%" x="22.5%"  y="16.66%" fill="#1D1F1D"/>
+                        <rect width="2.5%"  height="16.67%" x="56.25%" y="16.66%" fill="#1D1F1D"/>
+                        <rect width="1.25%" height="16.67%" x="62.5%"  y="16.66%" fill="#1D1F1D"/>
+                        <rect width="1.25%" height="16.67%" x="65%"    y="16.66%" fill="#1D1F1D"/>
+                        <rect width="30%"   height="16.67%" x="67.5%"  y="16.66%" fill="#1D1F1D"/>
+                        <rect width="1.25%" height="16.67%" x="98.75%" y="16.66%" fill="#1D1F1D"/>
+                    </g>
+                    <g class="level-3">
+                        <rect width="1.25%" height="16.67%" x="0"      y="33.33%" fill="#1D1F1D"/>
+                        <rect width="1.25%" height="16.67%" x="3.75%"  y="33.33%" fill="#1D1F1D"/>
+                        <rect width="1.25%" height="16.67%" x="8.75%"  y="33.33%" fill="#1D1F1D"/>
+                        <rect width="1.25%" height="16.67%" x="11.25%" y="33.33%" fill="#1D1F1D"/>
+                        <rect width="1.25%" height="16.67%" x="18.75%" y="33.33%" fill="#1D1F1D"/>
+                        <rect width="1.25%" height="16.67%" x="23.75%" y="33.33%" fill="#1D1F1D"/>
+                        <rect width="12.5%" height="16.67%" x="27.5%"  y="33.33%" fill="#1D1F1D"/>
+                        <rect width="2.5%"  height="16.67%" x="41.25%" y="33.33%" fill="#1D1F1D"/>
+                        <rect width="2.5%"  height="16.67%" x="45%"    y="33.33%" fill="#1D1F1D"/>
+                        <rect width="1.25%" height="16.67%" x="53.75%" y="33.33%" fill="#1D1F1D"/>
+                        <rect width="1.25%" height="16.67%" x="57.5%"  y="33.33%" fill="#1D1F1D"/>
+                        <rect width="1.25%" height="16.67%" x="62.5%"  y="33.33%" fill="#1D1F1D"/>
+                        <rect width="1.25%" height="16.67%" x="71.25%" y="33.33%" fill="#1D1F1D"/>
+                        <rect width="12.5%" height="16.67%" x="73.75%" y="33.33%" fill="#1D1F1D"/>
+                        <rect width="2.5%"  height="16.67%" x="87.5%"  y="33.33%" fill="#1D1F1D"/>
+                        <rect width="2.5%"  height="16.67%" x="91.25%" y="33.33%" fill="#1D1F1D"/>
+                    </g>
+                    <g class="level-4">
+                        <rect width="1.25%" height="16.67%" x="8.75%"  y="50%" fill="#1D1F1D"/>
+                        <rect width="1.25%" height="16.67%" x="20%"    y="50%" fill="#1D1F1D"/>
+                        <rect width="1.25%" height="16.67%" x="36.25%" y="50%" fill="#1D1F1D"/>
+                        <rect width="1.25%" height="16.67%" x="42.5%"  y="50%" fill="#1D1F1D"/>
+                        <rect width="1.25%" height="16.67%" x="52.5%"  y="50%" fill="#1D1F1D"/>
+                        <rect width="1.25%" height="16.67%" x="68.75%" y="50%" fill="#1D1F1D"/>
+                        <rect width="1.25%" height="16.67%" x="78.75%" y="50%" fill="#1D1F1D"/>
+                        <rect width="1.25%" height="16.67%" x="83.75%" y="50%" fill="#1D1F1D"/>
+                        <rect width="1.25%" height="16.67%" x="90%"    y="50%" fill="#1D1F1D"/>
+                        <rect width="1.25%" height="16.67%" x="97.5%"  y="50%" fill="#1D1F1D"/>
+                    </g>
+                    <g class="level-5">
+                        <rect width="1.25%" height="16.67%" x="43.75%" y="66.66%" fill="#1D1F1D"/>
+                        <rect width="1.25%" height="16.67%" x="92.5%"  y="66.66%" fill="#1D1F1D"/>
+                    </g>
+                    <g class="level-6">
+                        <rect width="1.25%" height="16.67%" x="35%"    y="83.33%" fill="#1D1F1D"/>
+                        <rect width="1.25%" height="16.67%" x="82.5%"  y="83.33%" fill="#1D1F1D"/>
+                    </g>             
+                </svg>
+            </div>  
             <h2>Описание игры</h2>
             <p class="main-description">Инди рогалик, основным темами которого являются алхимия, зельеварение и крафт. Бегаем по уровням, сражаемся, 
                 собираем ингредиенты, рецепты, экспериментируем, создавая предметы с уникальными эффектами, изучаем свойства
-                 разных материалов, крафтим магические предметы.</p>
-            <div class="game-description-main-part">
-                <ul class="game-description-subsections">
-                    <li><a class="subsection-ref subsection-ref-1" href="#" onclick="showSubsection(1); return false">Исследуй</a></li>
-                    <li><a class="subsection-ref subsection-ref-2" href="#" onclick="showSubsection(2); return false">Экспериментируй</a></li>
-                    <li><a class="subsection-ref subsection-ref-3" href="#" onclick="showSubsection(3); return false">Побеждай</a></li>
-                </ul>
-                <article class="subsection-description subsection-1" title="Описание блока Исследуй">
-                    <section align="justify">Паста про исследования<br>Инди рогалик, основным темами которого являются алхимия, зельеварение и крафт. Бегаем по уровням, 
-                        сражаемся, собираем ингредиенты, рецепты, экспериментируем, создавая предметы с уникальными эффектами, 
-                        изучаем свойства разных материалов, крафтим магические предметы.С каждым забегом в данже игрок узнает 
-                        все больше о рецептах и свойствах разных материалов. После смерти игрок попадает в хаб, и у него не 
-                        сохраняется ничего, кроме его Алхимического справочника, в котором записываются обнаруженные свойства, 
-                        рецепты зелий и крафтов. Бегаем по данжу, сражаемся, исследуем, изучаем, экспериментируем, решаем 
-                        головоломки, крафтим, умираем.</section>
-                    <aside>
-                        <img class="subsection-image" src="resources/why-cow.jpg">
-                        <img class="subsection-image" src="resources/why-cow.jpg">
-                    </aside>
-                </article>
-                <article class="subsection-description subsection-2" title="Описание блока Экспериментируй">
-                    <section align="justify">Паста про эксперименты<br>Инди рогалик, основным темами которого являются алхимия, зельеварение и крафт. Бегаем по уровням, 
-                        сражаемся, собираем ингредиенты, рецепты, экспериментируем, создавая предметы с уникальными эффектами, 
-                        изучаем свойства разных материалов, крафтим магические предметы.С каждым забегом в данже игрок узнает 
-                        все больше о рецептах и свойствах разных материалов. После смерти игрок попадает в хаб, и у него не 
-                        сохраняется ничего, кроме его Алхимического справочника, в котором записываются обнаруженные свойства, 
-                        рецепты зелий и крафтов. Бегаем по данжу, сражаемся, исследуем, изучаем, экспериментируем, решаем 
-                        головоломки, крафтим, умираем.
-                    </section>
-                    <aside>
-                        <img class="subsection-image" src="resources/why-cow.jpg">
-                        <img class="subsection-image" src="resources/why-cow.jpg">
-                    </aside>
-                </article>
-                <article class="subsection-description subsection-3" title="Описание блока Побеждай">
-                    <section align="justify">Паста про боевку<br>Инди рогалик, основным темами которого являются алхимия, зельеварение и крафт. Бегаем по уровням, 
-                        сражаемся, собираем ингредиенты, рецепты, экспериментируем, создавая предметы с уникальными эффектами, 
-                        изучаем свойства разных материалов, крафтим магические предметы.С каждым забегом в данже игрок узнает 
-                        все больше о рецептах и свойствах разных материалов. После смерти игрок попадает в хаб, и у него не 
-                        сохраняется ничего, кроме его Алхимического справочника, в котором записываются обнаруженные свойства, 
-                        рецепты зелий и крафтов. Бегаем по данжу, сражаемся, исследуем, изучаем, экспериментируем, решаем 
-                        головоломки, крафтим, умираем.</section>
-                    <aside>
-                        <img class="subsection-image" src="resources/why-cow.jpg">
-                        <img class="subsection-image" src="resources/why-cow.jpg">
-                    </aside>
-                </article>
-            </div>        
+                 разных материалов, крафтим магические предметы.
+            </p>               
         </div>
+        <div title="Описание игры (разделы)" class="game-description-main-part">
+            <div class="pixel-transition game-description-top">
+                <svg width="100%" height="150px" stroke="#1D1F1D">
+                    <g class="level-1">
+                        <rect width="8.75%" height="16.67%" x="0"     y="0" fill="#1D1F1D"/>
+                        <rect width="42.5%" height="16.67%" x="10%"   y="0" fill="#1D1F1D"/>
+                        <rect width="1.25%" height="16.67%" x="55%"   y="0" fill="#1D1F1D"/>
+                        <rect width="42.5%" height="16.67%" x="57.5%" y="0" fill="#1D1F1D"/>
+                    </g>
+                    <g class="level-2">
+                        <rect width="6.25%" height="16.67%" x="0"      y="16.66%" fill="#1D1F1D"/>
+                        <rect width="2.5%"  height="16.67%" x="7.5%"   y="16.66%" fill="#1D1F1D"/>
+                        <rect width="1.25%" height="16.67%" x="13.75%" y="16.66%" fill="#1D1F1D"/>
+                        <rect width="2.5%"  height="16.67%" x="16.25%" y="16.66%" fill="#1D1F1D"/>
+                        <rect width="1.25%" height="16.67%" x="20%"    y="16.66%" fill="#1D1F1D"/>
+                        <rect width="32.5%" height="16.67%" x="22.5%"  y="16.66%" fill="#1D1F1D"/>
+                        <rect width="2.5%"  height="16.67%" x="56.25%" y="16.66%" fill="#1D1F1D"/>
+                        <rect width="1.25%" height="16.67%" x="62.5%"  y="16.66%" fill="#1D1F1D"/>
+                        <rect width="1.25%" height="16.67%" x="65%"    y="16.66%" fill="#1D1F1D"/>
+                        <rect width="30%"   height="16.67%" x="67.5%"  y="16.66%" fill="#1D1F1D"/>
+                        <rect width="1.25%" height="16.67%" x="98.75%" y="16.66%" fill="#1D1F1D"/>
+                    </g>
+                    <g class="level-3">
+                        <rect width="1.25%" height="16.67%" x="0"      y="33.33%" fill="#1D1F1D"/>
+                        <rect width="1.25%" height="16.67%" x="3.75%"  y="33.33%" fill="#1D1F1D"/>
+                        <rect width="1.25%" height="16.67%" x="8.75%"  y="33.33%" fill="#1D1F1D"/>
+                        <rect width="1.25%" height="16.67%" x="11.25%" y="33.33%" fill="#1D1F1D"/>
+                        <rect width="1.25%" height="16.67%" x="18.75%" y="33.33%" fill="#1D1F1D"/>
+                        <rect width="1.25%" height="16.67%" x="23.75%" y="33.33%" fill="#1D1F1D"/>
+                        <rect width="12.5%" height="16.67%" x="27.5%"  y="33.33%" fill="#1D1F1D"/>
+                        <rect width="2.5%"  height="16.67%" x="41.25%" y="33.33%" fill="#1D1F1D"/>
+                        <rect width="2.5%"  height="16.67%" x="45%"    y="33.33%" fill="#1D1F1D"/>
+                        <rect width="1.25%" height="16.67%" x="53.75%" y="33.33%" fill="#1D1F1D"/>
+                        <rect width="1.25%" height="16.67%" x="57.5%"  y="33.33%" fill="#1D1F1D"/>
+                        <rect width="1.25%" height="16.67%" x="62.5%"  y="33.33%" fill="#1D1F1D"/>
+                        <rect width="1.25%" height="16.67%" x="71.25%" y="33.33%" fill="#1D1F1D"/>
+                        <rect width="12.5%" height="16.67%" x="73.75%" y="33.33%" fill="#1D1F1D"/>
+                        <rect width="2.5%"  height="16.67%" x="87.5%"  y="33.33%" fill="#1D1F1D"/>
+                        <rect width="2.5%"  height="16.67%" x="91.25%" y="33.33%" fill="#1D1F1D"/>
+                    </g>
+                    <g class="level-4">
+                        <rect width="1.25%" height="16.67%" x="8.75%"  y="50%" fill="#1D1F1D"/>
+                        <rect width="1.25%" height="16.67%" x="20%"    y="50%" fill="#1D1F1D"/>
+                        <rect width="1.25%" height="16.67%" x="36.25%" y="50%" fill="#1D1F1D"/>
+                        <rect width="1.25%" height="16.67%" x="42.5%"  y="50%" fill="#1D1F1D"/>
+                        <rect width="1.25%" height="16.67%" x="52.5%"  y="50%" fill="#1D1F1D"/>
+                        <rect width="1.25%" height="16.67%" x="68.75%" y="50%" fill="#1D1F1D"/>
+                        <rect width="1.25%" height="16.67%" x="78.75%" y="50%" fill="#1D1F1D"/>
+                        <rect width="1.25%" height="16.67%" x="83.75%" y="50%" fill="#1D1F1D"/>
+                        <rect width="1.25%" height="16.67%" x="90%"    y="50%" fill="#1D1F1D"/>
+                        <rect width="1.25%" height="16.67%" x="97.5%"  y="50%" fill="#1D1F1D"/>
+                    </g>
+                    <g class="level-5">
+                        <rect width="1.25%" height="16.67%" x="43.75%" y="66.66%" fill="#1D1F1D"/>
+                        <rect width="1.25%" height="16.67%" x="92.5%"  y="66.66%" fill="#1D1F1D"/>
+                    </g>
+                    <g class="level-6">
+                        <rect width="1.25%" height="16.67%" x="35%"    y="83.33%" fill="#1D1F1D"/>
+                        <rect width="1.25%" height="16.67%" x="82.5%"  y="83.33%" fill="#1D1F1D"/>
+                    </g>             
+                </svg>
+            </div> 
+            <ul class="game-description-subsections">
+                <li><a class="subsection-ref subsection-ref-1" href="#" onclick="showSubsection(1); return false">Исследуй</a></li>
+                <li><a class="subsection-ref subsection-ref-2" href="#" onclick="showSubsection(2); return false">Экспериментируй</a></li>
+                <li><a class="subsection-ref subsection-ref-3" href="#" onclick="showSubsection(3); return false">Побеждай</a></li>
+            </ul>
+            <article class="subsection-description subsection-1" title="Описание блока Исследуй">
+                <section align="justify">Паста про исследования<br>Инди рогалик, основным темами которого являются алхимия, зельеварение и крафт. Бегаем по уровням, 
+                    сражаемся, собираем ингредиенты, рецепты, экспериментируем, создавая предметы с уникальными эффектами, 
+                    изучаем свойства разных материалов, крафтим магические предметы.С каждым забегом в данже игрок узнает 
+                    все больше о рецептах и свойствах разных материалов. После смерти игрок попадает в хаб, и у него не 
+                    сохраняется ничего, кроме его Алхимического справочника, в котором записываются обнаруженные свойства, 
+                    рецепты зелий и крафтов. Бегаем по данжу, сражаемся, исследуем, изучаем, экспериментируем, решаем 
+                    головоломки, крафтим, умираем.</section>
+                <aside>
+                    <img class="subsection-image" src="resources/why-cow.jpg">
+                    <img class="subsection-image" src="resources/why-cow.jpg">
+                </aside>
+            </article>
+            <article class="subsection-description subsection-2" title="Описание блока Экспериментируй">
+                <section align="justify">Паста про эксперименты<br>Инди рогалик, основным темами которого являются алхимия, зельеварение и крафт. Бегаем по уровням, 
+                    сражаемся, собираем ингредиенты, рецепты, экспериментируем, создавая предметы с уникальными эффектами, 
+                    изучаем свойства разных материалов, крафтим магические предметы.С каждым забегом в данже игрок узнает 
+                    все больше о рецептах и свойствах разных материалов. После смерти игрок попадает в хаб, и у него не 
+                    сохраняется ничего, кроме его Алхимического справочника, в котором записываются обнаруженные свойства, 
+                    рецепты зелий и крафтов. Бегаем по данжу, сражаемся, исследуем, изучаем, экспериментируем, решаем 
+                    головоломки, крафтим, умираем.
+                </section>
+                <aside>
+                    <img class="subsection-image" src="resources/why-cow.jpg">
+                    <img class="subsection-image" src="resources/why-cow.jpg">
+                </aside>
+            </article>
+            <article class="subsection-description subsection-3" title="Описание блока Побеждай">
+                <section align="justify">Паста про боевку<br>Инди рогалик, основным темами которого являются алхимия, зельеварение и крафт. Бегаем по уровням, 
+                    сражаемся, собираем ингредиенты, рецепты, экспериментируем, создавая предметы с уникальными эффектами, 
+                    изучаем свойства разных материалов, крафтим магические предметы.С каждым забегом в данже игрок узнает 
+                    все больше о рецептах и свойствах разных материалов. После смерти игрок попадает в хаб, и у него не 
+                    сохраняется ничего, кроме его Алхимического справочника, в котором записываются обнаруженные свойства, 
+                    рецепты зелий и крафтов. Бегаем по данжу, сражаемся, исследуем, изучаем, экспериментируем, решаем 
+                    головоломки, крафтим, умираем.</section>
+                <aside>
+                    <img class="subsection-image" src="resources/why-cow.jpg">
+                    <img class="subsection-image" src="resources/why-cow.jpg">
+                </aside>
+            </article>
+            <div class="pixel-transition game-description-bottom">
+                <svg width="100%" height="150px" stroke="#1D1F1D">
+                    <g class="level-1">
+                        <rect width="8.75%" height="16.67%" x="0"     y="0" fill="#1D1F1D"/>
+                        <rect width="42.5%" height="16.67%" x="10%"   y="0" fill="#1D1F1D"/>
+                        <rect width="1.25%" height="16.67%" x="55%"   y="0" fill="#1D1F1D"/>
+                        <rect width="42.5%" height="16.67%" x="57.5%" y="0" fill="#1D1F1D"/>
+                    </g>
+                    <g class="level-2">
+                        <rect width="6.25%" height="16.67%" x="0"      y="16.66%" fill="#1D1F1D"/>
+                        <rect width="2.5%"  height="16.67%" x="7.5%"   y="16.66%" fill="#1D1F1D"/>
+                        <rect width="1.25%" height="16.67%" x="13.75%" y="16.66%" fill="#1D1F1D"/>
+                        <rect width="2.5%"  height="16.67%" x="16.25%" y="16.66%" fill="#1D1F1D"/>
+                        <rect width="1.25%" height="16.67%" x="20%"    y="16.66%" fill="#1D1F1D"/>
+                        <rect width="32.5%" height="16.67%" x="22.5%"  y="16.66%" fill="#1D1F1D"/>
+                        <rect width="2.5%"  height="16.67%" x="56.25%" y="16.66%" fill="#1D1F1D"/>
+                        <rect width="1.25%" height="16.67%" x="62.5%"  y="16.66%" fill="#1D1F1D"/>
+                        <rect width="1.25%" height="16.67%" x="65%"    y="16.66%" fill="#1D1F1D"/>
+                        <rect width="30%"   height="16.67%" x="67.5%"  y="16.66%" fill="#1D1F1D"/>
+                        <rect width="1.25%" height="16.67%" x="98.75%" y="16.66%" fill="#1D1F1D"/>
+                    </g>
+                    <g class="level-3">
+                        <rect width="1.25%" height="16.67%" x="0"      y="33.33%" fill="#1D1F1D"/>
+                        <rect width="1.25%" height="16.67%" x="3.75%"  y="33.33%" fill="#1D1F1D"/>
+                        <rect width="1.25%" height="16.67%" x="8.75%"  y="33.33%" fill="#1D1F1D"/>
+                        <rect width="1.25%" height="16.67%" x="11.25%" y="33.33%" fill="#1D1F1D"/>
+                        <rect width="1.25%" height="16.67%" x="18.75%" y="33.33%" fill="#1D1F1D"/>
+                        <rect width="1.25%" height="16.67%" x="23.75%" y="33.33%" fill="#1D1F1D"/>
+                        <rect width="12.5%" height="16.67%" x="27.5%"  y="33.33%" fill="#1D1F1D"/>
+                        <rect width="2.5%"  height="16.67%" x="41.25%" y="33.33%" fill="#1D1F1D"/>
+                        <rect width="2.5%"  height="16.67%" x="45%"    y="33.33%" fill="#1D1F1D"/>
+                        <rect width="1.25%" height="16.67%" x="53.75%" y="33.33%" fill="#1D1F1D"/>
+                        <rect width="1.25%" height="16.67%" x="57.5%"  y="33.33%" fill="#1D1F1D"/>
+                        <rect width="1.25%" height="16.67%" x="62.5%"  y="33.33%" fill="#1D1F1D"/>
+                        <rect width="1.25%" height="16.67%" x="71.25%" y="33.33%" fill="#1D1F1D"/>
+                        <rect width="12.5%" height="16.67%" x="73.75%" y="33.33%" fill="#1D1F1D"/>
+                        <rect width="2.5%"  height="16.67%" x="87.5%"  y="33.33%" fill="#1D1F1D"/>
+                        <rect width="2.5%"  height="16.67%" x="91.25%" y="33.33%" fill="#1D1F1D"/>
+                    </g>
+                    <g class="level-4">
+                        <rect width="1.25%" height="16.67%" x="8.75%"  y="50%" fill="#1D1F1D"/>
+                        <rect width="1.25%" height="16.67%" x="20%"    y="50%" fill="#1D1F1D"/>
+                        <rect width="1.25%" height="16.67%" x="36.25%" y="50%" fill="#1D1F1D"/>
+                        <rect width="1.25%" height="16.67%" x="42.5%"  y="50%" fill="#1D1F1D"/>
+                        <rect width="1.25%" height="16.67%" x="52.5%"  y="50%" fill="#1D1F1D"/>
+                        <rect width="1.25%" height="16.67%" x="68.75%" y="50%" fill="#1D1F1D"/>
+                        <rect width="1.25%" height="16.67%" x="78.75%" y="50%" fill="#1D1F1D"/>
+                        <rect width="1.25%" height="16.67%" x="83.75%" y="50%" fill="#1D1F1D"/>
+                        <rect width="1.25%" height="16.67%" x="90%"    y="50%" fill="#1D1F1D"/>
+                        <rect width="1.25%" height="16.67%" x="97.5%"  y="50%" fill="#1D1F1D"/>
+                    </g>
+                    <g class="level-5">
+                        <rect width="1.25%" height="16.67%" x="43.75%" y="66.66%" fill="#1D1F1D"/>
+                        <rect width="1.25%" height="16.67%" x="92.5%"  y="66.66%" fill="#1D1F1D"/>
+                    </g>
+                    <g class="level-6">
+                        <rect width="1.25%" height="16.67%" x="35%"    y="83.33%" fill="#1D1F1D"/>
+                        <rect width="1.25%" height="16.67%" x="82.5%"  y="83.33%" fill="#1D1F1D"/>
+                    </g>             
+                </svg>
+            </div>
+        </div> 
         <div title="Лор" class="story-section">  
             <div class="story-section-left">
                 <h2>Предыстория</h2>
@@ -152,18 +341,29 @@
         <div title="Галерея" class="gallery" id="gallery">
             <h2 class="header-gallery">Галерея</h2>
             <img class="gallery-photo main-photo" src="resources/why-cow.jpg">  
-            <div>
+            <div class="gallery-section">
+                <button class="gallery-carousel-button gallery-arrow-left" onclick="changeGalleryMainPhoto(-1); return false">
+                    <svg width="60px" height="80px" viewBox="0 0 50 80" xml:space="preserve">
+                      <polyline fill="none" stroke="#FFFFFF" stroke-width="1" stroke-linecap="round" stroke-linejoin="round" points="
+                      45.63,75.8 0.375,38.087 45.63,0.375 "/>
+                    </svg>  
+                </button>
                 <section class="gallery-carousel">                    
                     <img class="gallery-photo additional-photo photo-1" src="resources/gallery-photo-1.png">
                     <img class="gallery-photo additional-photo photo-2" src="resources/gallery-photo-2.png">
                     <img class="gallery-photo additional-photo photo-3" src="resources/gallery-photo-3.png">
-                    <img class="gallery-photo additional-photo photo-4" src="resources/gallery-photo-4.png">           
+                    <img class="gallery-photo additional-photo photo-4" src="resources/gallery-photo-4.png">          
                 </section>
+                <button class="gallery-carousel-button gallery-arrow-right" onclick="changeGalleryMainPhoto(1); return false">
+                    <svg width="60px" height="80px" viewBox="0 0 50 80" xml:space="preserve">
+                      <polyline fill="none" stroke="#FFFFFF" stroke-width="1" stroke-linecap="round" stroke-linejoin="round" points="0.375,0.375 45.63,38.087 0.375,75.8 "/>
+                    </svg>
+                </button>
             </div>           
         </div>
         <div title="Статистика" class="stats" id="stats">
             <h2>Статистика</h2>
-            <p class="stats-section-description">За всё время сущестования проекта игроки:</p>
+            <p class="stats-section-description">За всё время существования проекта игроки:</p>
             <div class="stats-details">
                 <section class="stats-parameter-1">
                     <img class="stats-image" src="resources/stats-logo-1.png">
@@ -231,8 +431,8 @@
                     <p class="participant-position">Unity-разработчик / Frontend-разработчик</p>
                 </section>
             </div>
-            <div class="pixel-transition">
-                <svg width="100%" height="150px">
+            <div class="pixel-transition team-bottom">
+                <svg width="100%" height="150px" stroke="#1D1F1D">
                     <g class="level-1">
                         <rect width="8.75%" height="16.67%" x="0"     y="0" fill="#1D1F1D"/>
                         <rect width="42.5%" height="16.67%" x="10%"   y="0" fill="#1D1F1D"/>
@@ -246,11 +446,10 @@
                         <rect width="2.5%"  height="16.67%" x="16.25%" y="16.66%" fill="#1D1F1D"/>
                         <rect width="1.25%" height="16.67%" x="20%"    y="16.66%" fill="#1D1F1D"/>
                         <rect width="32.5%" height="16.67%" x="22.5%"  y="16.66%" fill="#1D1F1D"/>
-                        <rect width="2.5%"  height="16.67%" x="56.75%" y="16.66%" fill="#1D1F1D"/>
-                        <rect width="1.25%" height="16.67%" x="63%"    y="16.66%" fill="#1D1F1D"/>
-                        <rect width="2.5%"  height="16.67%" x="65.5%"  y="16.66%" fill="#1D1F1D"/>
-                        <rect width="1.25%" height="16.67%" x="67.25%" y="16.66%" fill="#1D1F1D"/>
-                        <rect width="30%"   height="16.67%" x="67.5%" y="16.66%" fill="#1D1F1D"/>
+                        <rect width="2.5%"  height="16.67%" x="56.25%" y="16.66%" fill="#1D1F1D"/>
+                        <rect width="1.25%" height="16.67%" x="62.5%"  y="16.66%" fill="#1D1F1D"/>
+                        <rect width="1.25%" height="16.67%" x="65%"    y="16.66%" fill="#1D1F1D"/>
+                        <rect width="30%"   height="16.67%" x="67.5%"  y="16.66%" fill="#1D1F1D"/>
                         <rect width="1.25%" height="16.67%" x="98.75%" y="16.66%" fill="#1D1F1D"/>
                     </g>
                     <g class="level-3">
@@ -262,14 +461,14 @@
                         <rect width="1.25%" height="16.67%" x="23.75%" y="33.33%" fill="#1D1F1D"/>
                         <rect width="12.5%" height="16.67%" x="27.5%"  y="33.33%" fill="#1D1F1D"/>
                         <rect width="2.5%"  height="16.67%" x="41.25%" y="33.33%" fill="#1D1F1D"/>
-                        <rect width="2.5%"  height="16.67%" x="44%"    y="33.33%" fill="#1D1F1D"/>
-                        <rect width="1.25%" height="16.67%" x="54%"    y="33.33%" fill="#1D1F1D"/>
-                        <rect width="1.25%" height="16.67%" x="57.75%" y="33.33%" fill="#1D1F1D"/>
-                        <rect width="1.25%" height="16.67%" x="65.25%" y="33.33%" fill="#1D1F1D"/>
-                        <rect width="1.25%" height="16.67%" x="70.25%" y="33.33%" fill="#1D1F1D"/>
-                        <rect width="12.5%" height="16.67%" x="74%"    y="33.33%" fill="#1D1F1D"/>
-                        <rect width="2.5%"  height="16.67%" x="87.75%" y="33.33%" fill="#1D1F1D"/>
-                        <rect width="2.5%"  height="16.67%" x="91.5%"  y="33.33%" fill="#1D1F1D"/>
+                        <rect width="2.5%"  height="16.67%" x="45%"    y="33.33%" fill="#1D1F1D"/>
+                        <rect width="1.25%" height="16.67%" x="53.75%" y="33.33%" fill="#1D1F1D"/>
+                        <rect width="1.25%" height="16.67%" x="57.5%"  y="33.33%" fill="#1D1F1D"/>
+                        <rect width="1.25%" height="16.67%" x="62.5%"  y="33.33%" fill="#1D1F1D"/>
+                        <rect width="1.25%" height="16.67%" x="71.25%" y="33.33%" fill="#1D1F1D"/>
+                        <rect width="12.5%" height="16.67%" x="73.75%" y="33.33%" fill="#1D1F1D"/>
+                        <rect width="2.5%"  height="16.67%" x="87.5%"  y="33.33%" fill="#1D1F1D"/>
+                        <rect width="2.5%"  height="16.67%" x="91.25%" y="33.33%" fill="#1D1F1D"/>
                     </g>
                     <g class="level-4">
                         <rect width="1.25%" height="16.67%" x="8.75%"  y="50%" fill="#1D1F1D"/>
