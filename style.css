@@ -1,12 +1,12 @@
 html, body {
-    height: 100%;
-    width: 100%;
+    margin: 0;
 }
 
 body {
     background: #1D1F1D;
     color: white;
     letter-spacing: 0.02em;  
+    scroll-behavior: smooth;
 }
 
 body, button, input, p {
@@ -14,6 +14,13 @@ body, button, input, p {
     font-style: normal;
     font-size: 20px;
     line-height: 30px;
+}
+
+h1, h2 {  
+    font-family: "Press Start 2P";
+    text-align: center;
+    letter-spacing: 0.05em;
+    font-weight: 700;
 }
 
 h1 {
@@ -36,13 +43,6 @@ h3 {
     margin-top: 10px;
 }
 
-h1, h2 {  
-    font-family: "Press Start 2P";
-    text-align: center;
-    letter-spacing: 0.05em;
-    font-weight: 700;
-}
-
 div {
     text-align: center;
 }
@@ -60,6 +60,11 @@ header, footer {
 
 footer {
     background-color: #1D1F1D;
+}
+
+.page-header {
+    background: url("/resources/header-background.png") no-repeat bottom;
+    background-size: cover;
 }
 
 .social, .game-description-main-part {
@@ -233,9 +238,6 @@ footer {
     margin: auto;
 }
 
-.navigation.top-nav {
-}
-
 .navigation.bottom-nav {
     margin-left: 25%;
 }
@@ -322,12 +324,12 @@ footer {
 }
 
 .game-description-start {
-    margin-top: 0;
-    margin-bottom: 30px;
+    margin-top: -10px;
+    margin-bottom: 40px;
 }
 
 .platforms-logo {
-    border-top: 1px solid rgb(255, 255, 255);
+    border-top: 1px solid white;
     display: inline;
     padding-top: 70px;
 }
@@ -348,7 +350,8 @@ footer {
 }
 
 .buy-section {
-    margin-top: 50px;
+    margin-top: 30px;
+    margin-bottom: 350px;
 }
 
 .buy-button {
@@ -396,10 +399,6 @@ footer {
     filter: brightness(60%);
 }
 
-.game-description {
-    margin-top: -150px;
-}
-
 .game-description h2 {
     margin-top: 150px;
     margin-bottom: 30px;
@@ -408,9 +407,6 @@ footer {
 .game-description .main-description {
     margin-bottom: 200px;
     padding: 0 20%;
-}
-
-.game-description-main-part {
 }
 
 .game-description-subsections {
@@ -606,8 +602,7 @@ footer {
     justify-content: center;
     grid-template-rows: repeat(2, 1fr);
     grid-template-columns: repeat(3, 1fr);
-    grid-column-gap: 300px;
-    grid-row-gap: 200px;
+    gap: 15vh 15vw;
     width: fit-content;
     margin: 150px auto 0 auto;
 }
@@ -648,15 +643,15 @@ footer {
     justify-content: center;
     grid-template-rows: repeat(2, 1fr);
     grid-template-columns: repeat(3, 1fr);
-    grid-gap: 200px;
+    gap: 10vh 10vw;
     margin: 150px auto;
     width: fit-content;
 }
 
 .participant-photo {
-    width: 300px;
-    height: 300px;
-    border-radius: 170px;
+    width: 15vw;
+    height: auto;
+    border-radius: 50%;
     box-shadow: 0px 10px 10px 5px #000;
     margin-bottom: 30px;
 }
@@ -678,13 +673,11 @@ footer {
 
 .social {
     color: #202220;
-    padding-top: 50px;
     padding-bottom: 120px;
 }
 
 .feedbacks {
-    margin-top: 200px;
-    margin-bottom: 200px;
+    margin: 200px 0;
 }
 
 .message-before-feedback a {
@@ -732,10 +725,6 @@ footer {
 
 .feedback-submit-button:hover {
     transform: scale(1.2);
-}
-
-.contacts {
-    
 }
 
 .contacts h2 {
@@ -791,21 +780,11 @@ footer {
 }
 
 .pixel-transition {
-    position: absolute;
-    z-index: 100;
+    position: relative;
     width: 100%;
 }
 
-.pixel-transition.start-section-bottom {
-    position: relative;
-    transform: rotate(180deg);
-}
-
+.pixel-transition.start-section-bottom,
 .pixel-transition.game-description-bottom {
-    position: relative;
     transform: rotate(180deg);
-}
-
-.pixel-transition.game-description-top {
-    position: relative;
 }

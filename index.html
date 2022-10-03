@@ -8,83 +8,41 @@
         <link href="style.css" rel="stylesheet">
     </head>
     <body>
-        <header>       
-            <img class="game-logo top-game-logo" src="resources/pixel-logo-temporary.png">
-            <nav class="navigation top-nav">     
-                <ul class="section-refs">
-                    <li><a href="#game-description">Описание игры</a></li>
-                    <li><a href="#video-demo">Видео</a></li>
-                    <li><a href="#gallery">Галерея</a></li>
-                    <li><a href="#stats">Статистика</a></li>
-                    <li><a href="#contacts">Контакты</a></li>
-                </ul>
-            </nav>   
-            <div class="user-section">
-                <button class="enter-button" onclick="showAuthorizationSection(authorizationForm); return false">Вход</button>  
-                <div class="user-info">
-                    <p>User123User123User123User123</p>
-                    <img class="exit-icon" src="resources/exit-icon.png" onclick="logout(); return false">
-                </div>  
-            </div>             
-        </header>
-        <div class="authorization-section" id="authorization-section">
-            <form class="authorization-form" id="authorization-form">
-                <div class="form-header">
-                    <a class="close-form-button" onclick="hideAuthorizationSection(authorizationForm); return false"></a>
-                    <img class="authorization-logo" src="resources/registration-logo.png">
-                    <h3>Авторизация</h3>
-                </div>   
-                <div class="form-body">
-                    <label for="username">E-mail или имя пользователя</label>
-                    <p><input type="text" id="auth-username" placeholder="Username"></p>
-                    <label for="password">Пароль</label>
-                    <p><input type="password" id="auth-password" placeholder="Password"></p>
-                    <button onclick="login(); return false">Войти</button>
-                    <a class="registration-ref" href="#" onclick="showRegistrationForm(registrationForm); return false">Регистрация</a> 
-                </div>                                    
-            </form>     
-            <form class="registration-form" id="registration-form">
-                <div class="form-header">
-                    <a class="close-form-button" onclick="hideAuthorizationSection(registrationForm); return false"></a>
-                    <img class="authorization-logo" src="resources/registration-logo.png">
-                    <h3>Регистрация</h3>
-                </div>
-                <div class="form-body registration-form-body">
-                    <label for="username">Имя пользователя</label>
-                    <p><input type="text" id="reg-username" placeholder="Username"></p>
-                    <label for="username">E-mail</label>
-                    <p><input type="text" id="reg-email" placeholder="Email@email.com"></p>
-                    <label for="password">Пароль</label>
-                    <p><input type="password" id="reg-password" placeholder="Password"></p>
-                    <label for="password">Повторите пароль</label>
-                    <p><input type="password" id="reg-repeat-password" placeholder="Password"></p>
-                    <button onclick="register(); return false">Зарегистрироваться</button>
-                    <p class="authorization-ref">Уже зарегистрировались? <a class="authorization-ref" href="#" onclick="showAuthorizationForm(); return false">Войти</a></p>
-                </div>       
-            </form>     
-            <form class="feedback-send-form" id="feedback-send-form">
-                <a class="close-form-button" onclick="hideAuthorizationSection(feedbackSendForm); return false"></a>
-                <img class="authorization-logo" src="resources/registration-logo.png">
-                <p class="feedback-sent-message">Отзыв отправлен.<br>Спасибо!</p>     
-            </form>      
-        </div>
-        <div title="Начальный раздел" class="start-section">
-            <img class="start-section-background" src="resources/header-background.png">
-            <div class="start-section-content">
-                <h1>The Alchemist</h1>
-                <p class="game-description-start">Исследуй подземелья и занимайся алхимией, чтобы сбежать! </p>
-                <div class="platforms-logo">
-                    <img class="win10-logo "src="resources/win10-logo.png">
-                    <img class="ps5-logo" src="resources/ps5-logo.png">       
-                </div>
-                <section class="buy-section">
-                    <button class="buy-button"><p>Купить</p></button>
-                </section> 
-            </div>                  
-        </div>
-        <div title="Описание игры" class="game-description" id="game-description">
+        <div class="page-header">
+            <header>       
+                <img class="game-logo top-game-logo" src="resources/pixel-logo-temporary.png">
+                <nav class="navigation top-nav">     
+                    <ul class="section-refs">
+                        <li><a href="#game-description">Описание игры</a></li>
+                        <li><a href="#video-demo">Видео</a></li>
+                        <li><a href="#gallery">Галерея</a></li>
+                        <li><a href="#stats">Статистика</a></li>
+                        <li><a href="#contacts">Контакты</a></li>
+                    </ul>
+                </nav>   
+                <div class="user-section">
+                    <button class="enter-button" onclick="showAuthorizationSection(authorizationForm); return false">Вход</button>  
+                    <div class="user-info">
+                        <p>User123User123User123User123</p>
+                        <img class="exit-icon" src="resources/exit-icon.png" onclick="logout(); return false">
+                    </div>  
+                </div>             
+            </header>
+            <div title="Начальный раздел" class="start-section">
+                <div class="start-section-content">
+                    <h1>The Alchemist</h1>
+                    <p class="game-description-start">Исследуй подземелья и занимайся алхимией, чтобы сбежать! </p>
+                    <div class="platforms-logo">
+                        <img class="win10-logo "src="resources/win10-logo.png">
+                        <img class="ps5-logo" src="resources/ps5-logo.png">       
+                    </div>
+                    <section class="buy-section">
+                        <button class="buy-button"><p>Купить</p></button>
+                    </section> 
+                </div>                  
+            </div>
             <div class="pixel-transition start-section-bottom">
-                <svg width="100%" height="150px" stroke="#1D1F1D">
+                <svg width="100%" height="15%" stroke="#1D1F1D">
                     <g class="level-1">
                         <rect width="8.75%" height="16.67%" x="0"     y="0" fill="#1D1F1D"/>
                         <rect width="42.5%" height="16.67%" x="10%"   y="0" fill="#1D1F1D"/>
@@ -143,7 +101,50 @@
                         <rect width="1.25%" height="16.67%" x="82.5%"  y="83.33%" fill="#1D1F1D"/>
                     </g>             
                 </svg>
-            </div>  
+            </div>
+        </div>      
+        <div class="authorization-section" id="authorization-section">
+            <form class="authorization-form" id="authorization-form">
+                <div class="form-header">
+                    <a class="close-form-button" onclick="hideAuthorizationSection(authorizationForm); return false"></a>
+                    <img class="authorization-logo" src="resources/registration-logo.png">
+                    <h3>Авторизация</h3>
+                </div>   
+                <div class="form-body">
+                    <label for="username">E-mail или имя пользователя</label>
+                    <p><input type="text" id="auth-username" placeholder="Username"></p>
+                    <label for="password">Пароль</label>
+                    <p><input type="password" id="auth-password" placeholder="Password"></p>
+                    <button onclick="login(); return false">Войти</button>
+                    <a class="registration-ref" href="#" onclick="showRegistrationForm(registrationForm); return false">Регистрация</a> 
+                </div>                                    
+            </form>     
+            <form class="registration-form" id="registration-form">
+                <div class="form-header">
+                    <a class="close-form-button" onclick="hideAuthorizationSection(registrationForm); return false"></a>
+                    <img class="authorization-logo" src="resources/registration-logo.png">
+                    <h3>Регистрация</h3>
+                </div>
+                <div class="form-body registration-form-body">
+                    <label for="username">Имя пользователя</label>
+                    <p><input type="text" id="reg-username" placeholder="Username"></p>
+                    <label for="username">E-mail</label>
+                    <p><input type="text" id="reg-email" placeholder="Email@email.com"></p>
+                    <label for="password">Пароль</label>
+                    <p><input type="password" id="reg-password" placeholder="Password"></p>
+                    <label for="password">Повторите пароль</label>
+                    <p><input type="password" id="reg-repeat-password" placeholder="Password"></p>
+                    <button onclick="register(); return false">Зарегистрироваться</button>
+                    <p class="authorization-ref">Уже зарегистрировались? <a class="authorization-ref" href="#" onclick="showAuthorizationForm(); return false">Войти</a></p>
+                </div>       
+            </form>     
+            <form class="feedback-send-form" id="feedback-send-form">
+                <a class="close-form-button" onclick="hideAuthorizationSection(feedbackSendForm); return false"></a>
+                <img class="authorization-logo" src="resources/registration-logo.png">
+                <p class="feedback-sent-message">Отзыв отправлен.<br>Спасибо!</p>     
+            </form>      
+        </div>
+        <div title="Описание игры" class="game-description" id="game-description">        
             <h2>Описание игры</h2>
             <p class="main-description">Инди рогалик, основным темами которого являются алхимия, зельеварение и крафт. Бегаем по уровням, сражаемся, 
                 собираем ингредиенты, рецепты, экспериментируем, создавая предметы с уникальными эффектами, изучаем свойства
@@ -152,7 +153,7 @@
         </div>
         <div title="Описание игры (разделы)" class="game-description-main-part">
             <div class="pixel-transition game-description-top">
-                <svg width="100%" height="150px" stroke="#1D1F1D">
+                <svg width="100%" height="15%" stroke="#1D1F1D">
                     <g class="level-1">
                         <rect width="8.75%" height="16.67%" x="0"     y="0" fill="#1D1F1D"/>
                         <rect width="42.5%" height="16.67%" x="10%"   y="0" fill="#1D1F1D"/>
@@ -258,7 +259,7 @@
                 </aside>
             </article>
             <div class="pixel-transition game-description-bottom">
-                <svg width="100%" height="150px" stroke="#1D1F1D">
+                <svg width="100%" height="15%" stroke="#1D1F1D">
                     <g class="level-1">
                         <rect width="8.75%" height="16.67%" x="0"     y="0" fill="#1D1F1D"/>
                         <rect width="42.5%" height="16.67%" x="10%"   y="0" fill="#1D1F1D"/>
@@ -430,9 +431,11 @@
                     <p class="participant-name">Артём Петрушко</p>
                     <p class="participant-position">Unity-разработчик / Frontend-разработчик</p>
                 </section>
-            </div>
+            </div>                   
+        </div>
+        <div title="Связь с разрабами" class="social">
             <div class="pixel-transition team-bottom">
-                <svg width="100%" height="150px" stroke="#1D1F1D">
+                <svg width="100%" height="15%" stroke="#1D1F1D">
                     <g class="level-1">
                         <rect width="8.75%" height="16.67%" x="0"     y="0" fill="#1D1F1D"/>
                         <rect width="42.5%" height="16.67%" x="10%"   y="0" fill="#1D1F1D"/>
@@ -491,9 +494,7 @@
                         <rect width="1.25%" height="16.67%" x="82.5%"  y="83.33%" fill="#1D1F1D"/>
                     </g>             
                 </svg>
-            </div>          
-        </div>
-        <div title="Связь с разрабами" class="social">
+            </div>
             <div title="Отзывы" class="feedbacks">
                 <h2>Оставить отзыв</h2>    
                 <p class="message-before-feedback">Нам очень важно ваше мнение! Если хотите оставить отзыв, <a href="#" onclick="showAuthorizationSection(authorizationForm); return false">войдите</a> или <a href="#" onclick="showAuthorizationSection(registrationForm); return false">зарегистрируйтесь</a>.</p>        
