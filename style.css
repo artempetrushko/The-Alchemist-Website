@@ -16,11 +16,14 @@ body, button, input, p {
     line-height: 30px;
 }
 
+h1, h2, h3 {
+    font-weight: 700;
+    letter-spacing: 0.05em;   
+}
+
 h1, h2 {  
     font-family: "Press Start 2P";
-    text-align: center;
-    letter-spacing: 0.05em;
-    font-weight: 700;
+    text-align: center; 
 }
 
 h1 {
@@ -36,10 +39,8 @@ h2 {
 }
 
 h3 {
-    font-weight: 700;
     font-size: 24px;
     line-height: 29px; 
-    letter-spacing: 0.05em; 
     margin-top: 10px;
 }
 
@@ -58,8 +59,13 @@ header, footer {
     height: 240px;
 }
 
-footer {
-    background-color: #1D1F1D;
+.content-image, .ref-button {
+    border-radius: 4px;
+}
+
+.content-image, .video-player {
+    height: auto;
+    box-shadow: 0px 5px 15px 5px black;
 }
 
 .page-header {
@@ -185,7 +191,6 @@ footer {
     width: 100%;
     background-color: #BDE038;
     border: none;
-    border-radius: 4px;
     padding: 14px;
 }
 
@@ -275,7 +280,6 @@ footer {
     background-color: transparent;
     height: fit-content;
     padding: 15px 40px;
-    border-radius: 7px;
     border: 2px solid #BDE038;
     color: white;
     font-size: 18px;
@@ -359,7 +363,6 @@ footer {
     width: fit-content;
     background-color: #BDE038;
     border: none;
-    border-radius: 4px;
     box-shadow: 0px 5px 15px 5px rgb(15, 15, 15);
     transition: 0.5s;
 }
@@ -371,7 +374,6 @@ footer {
 
 .buy-button p {
     position: relative;
-    font-family: "Montserrat";
     font-size: 26px;
     line-height: 32px;
     font-weight: 600;
@@ -381,7 +383,6 @@ footer {
 
 .start-section {
     text-align: center;
-    height: calc(100% - 240px);
 }
 
 .start-section-content {
@@ -452,7 +453,7 @@ footer {
     grid-template-rows: 1fr 1fr;
     align-items: center;
     width: 50%;
-    row-gap: 20px;
+    row-gap: 3%;
     padding-bottom: 2%;
 }
 
@@ -462,7 +463,6 @@ footer {
     left: 15%;
     width: 70%; 
     object-fit: contain;
-    border-radius: 3px;
 }
 
 .subsection-description section {
@@ -512,7 +512,6 @@ footer {
 
 .story-image {
     position: relative;
-    border-radius: 3px;
     width: 100%;
     right: 10%;
 }
@@ -523,8 +522,6 @@ footer {
 
 .video-player {
     width: 70%;
-    height: auto;
-    box-shadow: 0px 5px 15px 5px black;
     margin-top: -30px;
 }
 
@@ -532,20 +529,13 @@ footer {
     margin-bottom: 30px;
 }
 
-.gallery-photo {
-    border-radius: 5px;
-    box-shadow: 0px 5px 15px 5px #000;
-}
-
 .main-photo {
     width: 50%;
-    height: auto;
     margin-bottom: 50px;
 }
 
 .additional-photo {
     width: 100%;
-    height: auto;
 }
 
 .additional-photo:focus {
@@ -711,7 +701,6 @@ footer {
     left: 30px;
     margin-top: 75px;
     background: #BDE038;
-    border-radius: 4px;
     border: none;
     width: 175px;
     height: 48px;
@@ -719,7 +708,7 @@ footer {
     font-size: 16px;
     line-height: 20px;
     letter-spacing: 0.05em;
-    box-shadow: 0px 5px 15px 5px black;
+    box-shadow: 0px 10px 25px 2px rgb(72, 72, 72);
     transition: 0.5s;
 }
 
@@ -738,7 +727,7 @@ footer {
 
 .contacts-buttons {
     display: grid;
-    grid-template-columns: repeat(3, minmax(350px, 350px));
+    grid-template-columns: repeat(3, minmax(10%, 350px));
     justify-content: center;
     padding: 0;
 }
@@ -748,7 +737,6 @@ footer {
     height: 100px;
     text-align: center;
     font-size: 20px;
-    border-radius: 4px;
     border: none;
     box-shadow: 0px 10px 25px 2px rgb(72, 72, 72);
     transition: 0.3s;
@@ -764,7 +752,6 @@ footer {
     position: relative;
     text-align: center;
     color: #1D1F1D;
-    font-family: "Montserrat";
     font-size: 25px;
     font-weight: 600;
     letter-spacing: 0.02em;
