@@ -20,7 +20,7 @@ $('.feedback-form').hide();
 showSubsection(1);
 
 for (var i = 5; i <= galleryPhotosCount; i++) {
-    $('<img class="gallery-photo additional-photo"></img>').addClass('photo-' + i)
+    $('<img class="content-image gallery-photo additional-photo"></img>').addClass('photo-' + i)
                                                            .attr('src', 'resources/gallery-photo-' + i +  '.png')
                                                            .appendTo(galleryCarousel)
                                                            .hide();
@@ -68,10 +68,11 @@ function setArrowButtonVisibility() {
 function showSubsection(subsectionNumber) {
     gameSubDescriptions = $('.subsection-description');
     for (var i = 1; i <= gameSubDescriptions.length; i++) {
-        gameSubDescriptions.eq(i - 1).css('display', i === subsectionNumber ? 'table' : 'none');
         if (i === subsectionNumber) {
+            gameSubDescriptions.eq(i - 1).css('display', 'grid');
             $('.subsection-ref.subsection-ref-' + i).addClass('focused');
         } else {
+            gameSubDescriptions.eq(i - 1).hide();
             $('.subsection-ref.subsection-ref-' + i).removeClass('focused');
         }
     }

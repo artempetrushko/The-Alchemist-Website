@@ -56,6 +56,7 @@ header, footer {
     position: relative;
     display: flex;
     align-items: center;
+    justify-content: center;
     height: 240px;
 }
 
@@ -237,14 +238,9 @@ header, footer {
 
 .navigation {
     display: flex;  
-    width: 50%;
     justify-content: center;
     align-items: center;
     margin: auto;
-}
-
-.navigation.bottom-nav {
-    margin-left: 25%;
 }
 
 .section-refs {
@@ -256,8 +252,7 @@ header, footer {
 
 .section-refs li {
     display: inline;
-    margin: 30px;
-    padding-bottom: -50px;
+    margin: 40px;
     font-size: 20px;
 }
 
@@ -316,7 +311,8 @@ header, footer {
 .game-logo {
     position: relative;
     width: 150px;
-    height: 180px;     
+    min-width: 50px;
+    height: auto;     
 }
 
 .top-game-logo {
@@ -325,6 +321,11 @@ header, footer {
 
 .bottom-game-logo {   
     margin-right: 8%;    
+}
+
+.game-logo.filler {
+    margin-left: 8%;
+    visibility: hidden;
 }
 
 .game-description-start {
@@ -340,7 +341,7 @@ header, footer {
 
 .ps5-logo, .win10-logo {  
     width: 280px;
-    height: 60px;
+    height: auto;
     margin: 5px;   
     filter: grayscale(1) brightness(1000%);
 }
@@ -444,85 +445,75 @@ header, footer {
 }
 
 .subsection-description {
-    display: table;
-    margin-bottom: 50px;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    margin-bottom: 100px;
 }
 
-.subsection-description aside {
+.subsection-images {
     display: grid;
-    grid-template-rows: 1fr 1fr;
-    align-items: center;
-    width: 50%;
+    grid-template-rows: repeat(2, 1fr);
     row-gap: 3%;
-    padding-bottom: 2%;
+    align-items: center;
+    margin-left: 15%;
+    margin-right: 15%;
 }
 
 .subsection-image {
-    position: relative;
-    top: 0;
-    left: 15%;
-    width: 70%; 
-    object-fit: contain;
+    width: 100%;
 }
 
 .subsection-description section {
-    position: relative;
-    float: right;  
-    top: 150px;
-    right: 5%;
-    padding-bottom: 5%;
-    width: 40%;
+    display: flex;
+    padding-right: 15%;
+    text-align: justify;
+    align-items: center;
     line-height: 205.4%;
     color: #1D1F1D;
 }
 
-.subsection-description.subsection-2, .subsection-description.subsection-3 {
+.subsection-description.subsection-2, 
+.subsection-description.subsection-3 {
     display: none;
 }
 
 .story-section {
-    display: flex;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
     margin-top: 100px;
-}
-
-.story-section-left {
-    width: 60%;
-}
-
-.story-section-right {
-    width: 40%;
 }
 
 .story-section h2 {
     display: flex;
-    position: relative;
-    margin-left: 12%;
+    margin-left: 15%;
     margin-bottom: 50px;
-    width: fit-content;
 }
 
 .story-section section {
     display: flex;
-    position: relative;
-    margin-left: 12%;
-    padding-bottom: 5%;
+    margin-left: 15%;
     line-height: 205.4%;
-    width: 70%;
+    text-align: justify;
+}
+
+.story-section-images {
+    display: flex;
+    align-items: center;
+    margin: 0 15%;
 }
 
 .story-image {
-    position: relative;
     width: 100%;
-    right: 10%;
 }
 
 .video-demo h2 {
-    margin: 150px 0;
+    margin-top: 150px;
+    margin-bottom: 80px;
 }
 
 .video-player {
     width: 70%;
-    margin-top: -30px;
+    min-width: 600px;
 }
 
 .header-gallery {
@@ -531,6 +522,7 @@ header, footer {
 
 .main-photo {
     width: 50%;
+    min-width: 600px;
     margin-bottom: 50px;
 }
 
@@ -548,13 +540,20 @@ header, footer {
 }
 
 .gallery-section {
+    position: relative;
     display: flex;
+    align-items: center;
 }
 
 .gallery-carousel-button {
     position: relative;
+    height: 100%;
     background-color: #1D1F1D;
     border: none;
+}
+
+.gallery-carousel-button svg {
+    height: 100%;
 }
 
 .gallery-carousel-button svg:hover polyline{
@@ -562,17 +561,18 @@ header, footer {
 }
 
 .gallery-arrow-left {
-    left: 3%;
+    margin-left: 8%;
 }
 
 .gallery-arrow-right {
-    right: 3%;
+    margin-right: 8%;
 }
 
 .gallery-carousel {
     display: grid;
     justify-content: center;
-    grid-template-columns: repeat(4, minmax(20%, 20%));
+    align-items: center;
+    grid-template-columns: repeat(4, 20%);
     grid-column-gap: 30px;
 }
 
@@ -590,16 +590,15 @@ header, footer {
 .stats-details {
     display: grid;
     justify-content: center;
-    grid-template-rows: repeat(2, 1fr);
-    grid-template-columns: repeat(3, 1fr);
-    gap: 15vh 15vw;
-    width: fit-content;
-    margin: 150px auto 0 auto;
+    grid-template-rows: repeat(auto-fit, minmax(350px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    gap: 15vh 10vw;
+    margin: 150px 8% 0 8%;
 }
 
 .stats-image {
     width: 200px;
-    height: 200px;
+    height: auto;
 }
 
 .stats-text {  
@@ -631,15 +630,14 @@ header, footer {
 .team-table {
     display: grid;
     justify-content: center;
-    grid-template-rows: repeat(2, 1fr);
-    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(auto-fit, minmax(350px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
     gap: 10vh 10vw;
-    margin: 150px auto;
-    width: fit-content;
+    margin: 150px 8%;
 }
 
 .participant-photo {
-    width: 15vw;
+    width: 400px;
     height: auto;
     border-radius: 50%;
     box-shadow: 0px 10px 10px 5px #000;
@@ -697,9 +695,12 @@ header, footer {
 }
 
 .feedback-submit-button {
+    display: flex;
     position: relative;
-    left: 30px;
+    align-items: center;
+    justify-content: center;
     margin-top: 75px;
+    margin-left: 25px;
     background: #BDE038;
     border: none;
     width: 175px;
@@ -761,7 +762,7 @@ header, footer {
     position: relative;
     float: left;
     width: 70px;
-    height: 70px;
+    height: auto;
     left: 30px;
     top: 5px;
 }
