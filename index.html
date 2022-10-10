@@ -112,9 +112,10 @@
                 </div>   
                 <div class="form-body">
                     <label for="username">E-mail или имя пользователя</label>
-                    <p><input type="text" id="auth-username" placeholder="Username"></p>
+                    <p class="form-input-field"><input type="text" id="auth-username" placeholder="Username"></p>
                     <label for="password">Пароль</label>
-                    <p><input type="password" id="auth-password" placeholder="Password"></p>
+                    <p class="form-input-field"><input type="password" id="auth-password" placeholder="Password"></p>
+                    <p class="error-message">Неверный логин или пароль</p>
                     <button class="ref-button" onclick="login(); return false">Войти</button>
                     <a class="registration-ref" href="#" onclick="showRegistrationForm(registrationForm); return false">Регистрация</a> 
                 </div>                                    
@@ -127,13 +128,14 @@
                 </div>
                 <div class="form-body registration-form-body">
                     <label for="username">Имя пользователя</label>
-                    <p><input type="text" id="reg-username" placeholder="Username"></p>
+                    <p class="form-input-field"><input type="text" id="reg-username" placeholder="Username"></p>
                     <label for="username">E-mail</label>
-                    <p><input type="text" id="reg-email" placeholder="Email@email.com"></p>
+                    <p class="form-input-field"><input type="text" id="reg-email" placeholder="Email@email.com"></p>
                     <label for="password">Пароль</label>
-                    <p><input type="password" id="reg-password" placeholder="Password"></p>
+                    <p class="form-input-field"><input type="password" id="reg-password" placeholder="Password"></p>
                     <label for="password">Повторите пароль</label>
-                    <p><input type="password" id="reg-repeat-password" placeholder="Password"></p>
+                    <p class="form-input-field"><input type="password" id="reg-repeat-password" placeholder="Password"></p>
+                    <p class="error-message">Неверный логин или пароль</p>
                     <button class="ref-button" onclick="register(); return false">Зарегистрироваться</button>
                     <p class="authorization-ref">Уже зарегистрировались? <a class="authorization-ref" href="#" onclick="showAuthorizationForm(); return false">Войти</a></p>
                 </div>       
