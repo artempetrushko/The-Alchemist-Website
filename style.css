@@ -52,6 +52,10 @@ ul {
     list-style: none;
 }
 
+button {
+    border: none;
+}
+
 header, footer {
     position: relative;
     display: flex;
@@ -66,7 +70,7 @@ header, footer {
 
 .content-image, .video-player {
     height: auto;
-    box-shadow: 0px 5px 15px 5px black;
+    box-shadow: 0px 5px 10px 5px rgba(0, 0, 0, 0.3);
 }
 
 .page-header {
@@ -75,7 +79,8 @@ header, footer {
 }
 
 .social, .game-description-main-part {
-    background: linear-gradient(180deg, #F0EEE5 0.03%, #989187 95.6%);
+    background: #F0EEE5;
+    
 }
 
 .authorization-section {
@@ -198,7 +203,6 @@ header, footer {
     position: relative;
     width: 100%;
     background-color: #BDE038;
-    border: none;
     padding: 14px;
 }
 
@@ -337,17 +341,17 @@ header, footer {
 
 .game-description-start {
     margin-top: -10px;
-    margin-bottom: 40px;
+    margin-bottom: 15px;
 }
 
 .platforms-logo {
     border-top: 1px solid white;
     display: inline;
-    padding-top: 70px;
+    padding-top: 40px;
 }
 
 .ps5-logo, .win10-logo {  
-    width: 280px;
+    width: 220px;
     height: auto;
     margin: 5px;   
     filter: grayscale(1) brightness(1000%);
@@ -362,7 +366,7 @@ header, footer {
 }
 
 .buy-section {
-    margin-top: 30px;
+    margin-top: 70px;
     margin-bottom: 350px;
 }
 
@@ -370,8 +374,7 @@ header, footer {
     padding: 16px 65px;
     width: fit-content;
     background-color: #BDE038;
-    border: none;
-    box-shadow: 0px 5px 15px 5px rgb(15, 15, 15);
+    box-shadow: 10px 25px 25px 2px rgba(0, 0, 0, 0.5);
     transition: 0.5s;
 }
 
@@ -460,7 +463,7 @@ header, footer {
 .subsection-images {
     display: grid;
     grid-template-rows: repeat(2, 1fr);
-    row-gap: 3%;
+    row-gap: 5%;
     align-items: center;
     margin-left: 15%;
     margin-right: 15%;
@@ -473,7 +476,7 @@ header, footer {
 .subsection-description section {
     display: flex;
     padding-right: 15%;
-    text-align: justify;
+    text-align: left;
     align-items: center;
     line-height: 205.4%;
     color: #1D1F1D;
@@ -485,22 +488,23 @@ header, footer {
 }
 
 .story-section {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    margin-top: 100px;
+    margin-top: 200px;
+    margin-bottom: 20%;
 }
 
 .story-section h2 {
-    display: flex;
-    margin-left: 15%;
-    margin-bottom: 50px;
+    margin-bottom: 100px;
+}
+
+.story-section-description {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
 }
 
 .story-section section {
-    display: flex;
-    margin-left: 15%;
     line-height: 205.4%;
-    text-align: justify;
+    text-align: left;
+    padding-right: 15%;
 }
 
 .story-section-images {
@@ -550,13 +554,13 @@ header, footer {
     position: relative;
     display: flex;
     align-items: center;
+    justify-content: center;
 }
 
 .gallery-carousel-button {
     position: relative;
     height: 100%;
     background-color: #1D1F1D;
-    border: none;
 }
 
 .gallery-carousel-button svg {
@@ -599,8 +603,9 @@ header, footer {
     justify-content: center;
     grid-template-rows: repeat(auto-fit, minmax(350px, 1fr));
     grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
-    gap: 15vh 10vw;
+    gap: 15vh 6vw;
     margin: 150px 8% 0 8%;
+    /* глянуть отступы между колонками, чтобы при ситуации в 2 колонки были поменьше*/
 }
 
 .stats-image {
@@ -614,6 +619,7 @@ header, footer {
 
 .stats-value {
     font-size: 40px;
+    font-weight: 700;
     line-height: 49px;
     margin-top: 60px;
     margin-bottom: 0px;
@@ -644,24 +650,23 @@ header, footer {
 }
 
 .participant-photo {
-    width: 400px;
+    width: 300px;
     height: auto;
-    border-radius: 50%;
-    box-shadow: 0px 10px 10px 5px #000;
+    border-radius: 50%;  
     margin-bottom: 30px;
 }
 
 .participant-name {
-    font-weight: 500;
+    font-weight: 700;
     letter-spacing: 0.12em;
-    font-size: 24px;
+    font-size: 35px;
     line-height: 29px;
     margin-bottom: 0;
 }
 
 .participant-position {
     font-weight: 400;
-    font-size: 20px;
+    font-size: 25px;
     line-height: 205.4%;
     letter-spacing: 0.05em;
 }
@@ -675,6 +680,10 @@ header, footer {
     margin: 200px 0;
 }
 
+.feedbacks h2 {
+    margin-bottom: 100px;
+}
+
 .message-before-feedback a {
     color: black;
 }
@@ -684,16 +693,28 @@ header, footer {
 }
 
 .feedback-form {
+    display: flex;
     flex-direction: column;
-    width: 50%;
+    align-items: flex-start;
+    width: 60%;
     margin: 0 auto;
-    justify-content: flex-start;
 }
+
+.feedback-form-description {
+    white-space: pre-wrap;
+}
+
+.feedback-form-content {
+    width: 100%;
+    max-width: 1000px;
+}
+
 
 .feedback-input-field {
     background: transparent;
     margin-top: 40px;
-    width: 95%;
+    padding: 4px;
+    width: 100%;
     border: none;
     opacity: 0.8;
     border-bottom: 2px solid #1D1F1D;  
@@ -707,16 +728,14 @@ header, footer {
     align-items: center;
     justify-content: center;
     margin-top: 75px;
-    margin-left: 25px;
     background: #BDE038;
-    border: none;
     width: 175px;
     height: 48px;
     font-weight: 600;
     font-size: 16px;
     line-height: 20px;
     letter-spacing: 0.05em;
-    box-shadow: 0px 10px 25px 2px rgb(72, 72, 72);
+    box-shadow: 0px 5px 10px 2px rgb(72, 72, 72, 0.3);
     transition: 0.5s;
 }
 
@@ -725,7 +744,7 @@ header, footer {
 }
 
 .contacts h2 {
-    margin-bottom: 0px;
+    margin-bottom: 100px;
 }
 
 .contacts-description {
@@ -745,8 +764,7 @@ header, footer {
     height: 100px;
     text-align: center;
     font-size: 20px;
-    border: none;
-    box-shadow: 0px 10px 25px 2px rgb(72, 72, 72);
+    box-shadow: 0px 10px 25px 2px rgba(72, 72, 72, 0.5);
     transition: 0.3s;
     background-color: #F0EEE5;
 }
@@ -782,4 +800,5 @@ header, footer {
 .pixel-transition.start-section-bottom,
 .pixel-transition.game-description-bottom {
     transform: rotate(180deg);
+    top: 2px;
 }

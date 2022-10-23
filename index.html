@@ -137,7 +137,7 @@
                     <p class="form-input-field"><input type="password" id="reg-repeat-password" placeholder="Password"></p>
                     <p class="error-message">Неверный логин или пароль</p>
                     <button class="ref-button" onclick="register(); return false">Зарегистрироваться</button>
-                    <p class="authorization-ref">Уже зарегистрировались? <a class="authorization-ref" href="#" onclick="showAuthorizationForm(); return false">Войти</a></p>
+                    <p class="authorization-ref">Уже есть аккаунт? <a class="authorization-ref" href="#" onclick="showAuthorizationForm(); return false">Войти</a></p>
                 </div>       
             </form>     
             <form class="feedback-send-form" id="feedback-send-form">
@@ -325,23 +325,22 @@
             </div>
         </div> 
         <div title="Лор" class="story-section">  
-            <div class="story-section-description">
-                <h2>Предыстория</h2>
+            <h2>Предыстория</h2>
+            <div class="story-section-description">  
+                <div class="story-section-images">
+                    <img class="content-image story-image" src="resources/why-cow.jpg"> 
+                </div>            
                 <section>Персонаж - профессиональный и величайший алхимик, добившийся очень многого. Однако его главная цель 
                         по прежнему остается недостигнутой: создание эликсира вечной жизни/философского камня. В погоне за 
                         бессмертием, он, в ходе своих экспериментов, нещадно использовал всё и всех. Для него любые методы 
                         оправдывали средства, и его не заботило, что останется после его работы. Учёный проводил тысячи опытов, 
                         в ходе которых накапливалось много отходов, недоваренных существ.
-                </section>
-                <!--<button>Больше</button>-->
-            </div>   
-            <div class="story-section-images">
-                <img class="content-image story-image" src="resources/why-cow.jpg"> 
-            </div>                
+                </section>               
+            </div>                          
         </div>
         <div title="Видео-демонстрация" class="video-demo" id="video-demo">
             <h2>Видео-демонстрация</h2>
-            <video class="video-player" src="resources/rock-video.mp4" controls preload="metadata">
+            <video class="video-player" src="resources/rock-video.mp4" controls preload="metadata"></video>
         </div>
         <div title="Галерея" class="gallery" id="gallery">
             <h2 class="header-gallery">Галерея</h2>
@@ -501,10 +500,10 @@
             </div>
             <div title="Отзывы" class="feedbacks">
                 <h2>Оставить отзыв</h2>    
-                <p class="message-before-feedback">Нам очень важно ваше мнение! Если хотите оставить отзыв, <a href="#" onclick="showAuthorizationSection(authorizationForm); return false">войдите</a> или <a href="#" onclick="showAuthorizationSection(registrationForm); return false">зарегистрируйтесь</a>.</p>        
+                <p class="message-before-feedback">Нам очень важно ваше мнение! Если хотите оставить отзыв, <a href="#" onclick="showAuthorizationSection(authorizationForm); return false">войдите</a> или <a href="#" onclick="showAuthorizationSection(registrationForm); return false">зарегистрируйтесь</a>.</p>  
                 <form class="feedback-form"> 
-                    <p>Если Вы хотите поделиться с разработчиками мнением об игре, можете сделать это здесь :) </p>
-                    <p><input class="feedback-input-field" type="text" placeholder="Поле для отзыва"></p>
+                    <p class="feedback-form-description">Если Вы хотите поделиться с разработчиками мнением об игре, можете сделать это здесь :) </p>
+                    <p class="feedback-form-content"><input class="feedback-input-field" type="text" placeholder="Поле для отзыва"></p>
                     <button class="ref-button feedback-submit-button" onclick="sendFeedback(); return false">Отправить</button>
                 </form>        
             </div>
